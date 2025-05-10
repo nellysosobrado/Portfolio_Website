@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Start";
+}
+
+<section id="hem" class="hero">
+    <div class="hero-content">
+        <img src="~/images/Nelly.jpg" alt="Nelly" class="profile-image">
+        <h1>Nylegna Kir Sosobrado</h1>
+        <p>.NET Developer Student <br /> at KYH Liljeholmen</p>
+        <div class="hero-description">
+            <p>Based in Sweden, Huddinge</p>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/nellysosobrado" class="social-icon"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/nylegnakir/" class="social-icon"><i class="bi bi-linkedin"></i></a>
+        </div>
+        <div class="hero-buttons">
+            <a href="~/images/CV_NylegnaKir_Sosobrado.pdf" download class="cta-button secondary">Download my CV</a>
+            <a href="#projekt" class="cta-button secondary">My Projects</a>
+            <a onclick="copyEmail()" class="cta-button secondary">Contact Me</a>
+        </div>
+    </div>
+</section>
+
+<section id="projekt" class="projects">
+    <h2>Project Gallery</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="~/images/CashierApp.png" alt="Project 1" />
+            <div class="gallery-overlay">
+                <h3>Cashier console application</h3>
+                <p>
+                    A simple console-based checkout system...
+                </p>
+                <a href="https://github.com/nellysosobrado/CashierApp" target="_blank" class="project-link">See details</a>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="~/images/HotelBookingApp.png" alt="Project 2" />
+            <div class="gallery-overlay">
+                <h3>Hotelbooking console application</h3>
+                <p>
+                    C# console app with bookings and EF Core...
+                </p>
+                <a href="https://github.com/nellysosobrado/HotelBookingApp" target="_blank" class="project-link">See details</a>
+            </div>
+        </div>
+    </div>
+</section>
