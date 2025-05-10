@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 * {
     margin: 0;
@@ -130,7 +130,7 @@ section {
 }
 
     section:nth-child(even) {
-        background-color: #fafafa;
+        background-color: transparent;
     }
 
     section h2 {
@@ -414,7 +414,7 @@ footer {
     color: #efeeb4;
 }
 
-/* Knappar och l�nkar */
+/* Knappar och länkar */
 .project-link, .cta-button, button {
     background-color: #ffffff;
     color: #333333;
@@ -509,7 +509,7 @@ footer {
         }
 
             .cv-item ul li:before {
-                content: "�";
+                content: "•";
                 color: #309975;
                 position: absolute;
                 left: 0;
@@ -650,5 +650,118 @@ footer {
         font-size: 1.5rem;
         width: 45px;
         height: 45px;
+    }
+}
+
+
+/*skills carousel */
+.skills-carousel-section {
+    width: 100vw;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    padding: 3rem 0;
+}
+
+    .skills-carousel-section h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.skills-carousel {
+    display: flex;
+    gap: 2rem;
+    animation: scrollSkills 25s linear infinite;
+    width: max-content;
+    padding: 0 2rem;
+}
+
+.carousel-item {
+    min-width: 200px;
+    background-color: #ffffff;
+    color: #333333;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+@keyframes scrollSkills {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+/*skillz carousen */
+
+/*abouf me */
+.improved-about {
+    background-color: transparent; /* eller ta bort helt */
+    padding: 4rem 2rem;
+}
+
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: #333333;
+    line-height: 1.8;
+    background-color: #ffffff; /* Behåll vitt kort mot transparent bakgrund */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* ← mer elegant skugga */
+}
+
+
+    .about-text h2 {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        color: #454d66;
+    }
+
+.about-photo img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    border: 5px solid #dad873;
+    box-shadow: 0 0 20px rgba(218, 216, 115, 0.3);
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-photo img {
+        max-width: 250px;
+    }
+
+    .about-text {
+        padding: 1.5rem;
     }
 }
