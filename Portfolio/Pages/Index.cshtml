@@ -2,7 +2,10 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Start";
+    Layout = "_Layout";
 }
+
+
 
 <section id="hem" class="hero">
     <div class="hero-content">
@@ -20,9 +23,38 @@
             <a href="~/images/CV_NylegnaKir_Sosobrado.pdf" download class="cta-button secondary">Download my CV</a>
             <a href="#projekt" class="cta-button secondary">My Projects</a>
             <a onclick="copyEmail()" class="cta-button secondary">Contact Me</a>
+
+        </div>
+       
+    </div>
+</section>
+
+@* car *@
+<section id="skills" class="skills-carousel-section blend-with-hero">
+    <div class="carousel-wrapper">
+        <div class="skills-carousel" id="skills-carousel">
+            <div class="carousel-track">
+                <div class="carousel-item"><h4>C# / .NET</h4></div>
+                <div class="carousel-item"><h4>Razor Pages / MVC</h4></div>
+                <div class="carousel-item"><h4>Entity Framework Core</h4></div>
+                <div class="carousel-item"><h4>HTML / CSS / JS</h4></div>
+                <div class="carousel-item"><h4>SQL</h4></div>
+                <div class="carousel-item"><h4>Git & GitHub</h4></div>
+
+                <!-- Duplicerat för loopeffekt -->
+                <div class="carousel-item"><h4>C# / .NET</h4></div>
+                <div class="carousel-item"><h4>Razor Pages / MVC</h4></div>
+                <div class="carousel-item"><h4>Entity Framework Core</h4></div>
+                <div class="carousel-item"><h4>HTML / CSS / JS</h4></div>
+                <div class="carousel-item"><h4>SQL</h4></div>
+                <div class="carousel-item"><h4>Git & GitHub</h4></div>
+            </div>
         </div>
     </div>
 </section>
+
+
+
 
 <section id="projekt" class="projects">
     <h2>Project Gallery</h2>
