@@ -146,7 +146,7 @@ section {
             display: block;
             width: 50px;
             height: 3px;
-            background-color: #309975;
+            background-color: #333333;
             margin: 1rem auto;
         }
 
@@ -696,44 +696,39 @@ footer {
 }
 /*carosuel tekniska skillz*/
 
-.skills-carousel-section.blend-with-hero {
-    background-color: transparent;
-    padding: 2rem 0 4rem 0;
-    backdrop-filter: blur(2px);
-    position: relative;
-    z-index: 1;
-}
-
-.carousel-wrapper {
+.skills-carousel-section {
     overflow: hidden;
-    width: 100%;
+    padding: 2rem 0;
+    background-color: transparent;
     position: relative;
-}
-
-.skills-carousel {
-    width: 100%;
 }
 
 .carousel-track {
     display: flex;
+    gap: 2rem;
     width: max-content;
-    animation: scrollLoop 30s linear infinite;
+    animation: scrollLoop 25s linear infinite;
 }
 
 .carousel-item {
-    min-width: 200px;
+    flex: 0 0 auto;
+    min-width: 220px;
     background-color: rgba(255, 255, 255, 0.85);
-    color: #333;
-    padding: 1rem 2rem;
-    margin-right: 2rem;
+    padding: 1rem;
     border-radius: 12px;
     border: 1px solid #ddd;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
     font-weight: 600;
-    font-size: 1rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
 }
+
+    .carousel-item i {
+        font-size: 1.8rem;
+        color: #454d66;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
 
     .carousel-item:hover {
         transform: scale(1.05);
@@ -748,3 +743,126 @@ footer {
         transform: translateX(-50%);
     }
 }
+
+
+/*about me*/
+.clean-about {
+    background-color: #ffffff;
+    padding: 5rem 2rem;
+}
+
+.about-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    color: #333;
+    line-height: 1.8;
+    font-family: 'Manrope', sans-serif;
+}
+
+.about-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+    .about-heading i {
+        font-size: 1.8rem;
+        color: #666;
+    }
+
+    .about-heading h2 {
+        font-size: 2.2rem;
+        color: #222;
+        margin: 0.5rem 0;
+    }
+
+    .about-heading hr {
+        width: 50px;
+        height: 2px;
+        background-color: #ccc;
+        border: none;
+        margin: 0 auto;
+    }
+
+.about-wrapper p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-wrapper .intro {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #222;
+}
+
+.about-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.cta-button.soft {
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    .cta-button.soft:hover {
+        background-color: #f5f5f5;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+    }
+
+/* About Highlights Section */
+.about-highlights {
+    margin-top: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    text-align: center;
+}
+
+    .about-highlights h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+        color: #222;
+    }
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease;
+}
+
+    .highlight-item i {
+        font-size: 1.3rem;
+        color: #555;
+        flex-shrink: 0;
+    }
+
+    .highlight-item:hover {
+        transform: translateY(-2px);
+    }
