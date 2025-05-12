@@ -1093,3 +1093,85 @@ footer {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/*contact*/
+/* Kontakt */
+.contact-section {
+    padding: 4rem 1.5rem;
+    background-color: #f9f9f9;
+}
+
+    .contact-section .about-wrapper {
+        background-color: #fff;
+        padding: 2.5rem;
+        border-radius: 16px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 0.9rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color 0.2s;
+    }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #666;
+        }
+
+    .contact-form button.cta-button {
+        margin-top: 1rem;
+        padding: 0.8rem 2rem;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+        .contact-form button.cta-button:hover {
+            background-color: #555;
+        }
+
+
+/* Footer */
+.site-footer {
+    background-color: #222;
+    color: #ddd;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-links a {
+    color: #ddd;
+    margin: 0 0.5rem;
+    font-size: 1.4rem;
+    transition: color 0.2s;
+}
+
+    .footer-links a:hover {
+        color: #fff;
+    }
