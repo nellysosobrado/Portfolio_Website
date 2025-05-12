@@ -2,137 +2,173 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Start";
+    Layout = "_Layout";
 }
 
-<header class="hero" id="hem">
+<section id="hem" class="hero">
     <div class="hero-content">
-        <img src="~/images/Nelly.jpg" alt="Portrait of Nylegna Kir Sosobrado" class="profile-image">
+        <img src="~/images/Nelly.jpg" alt="Nelly" class="profile-image">
         <h1>Nylegna Kir Sosobrado</h1>
         <p>.NET Developer Student <br /> at KYH Liljeholmen</p>
         <div class="hero-description">
             <p>Based in Sweden, Huddinge</p>
         </div>
         <div class="social-links">
-            <a href="https://github.com/nellysosobrado" class="social-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/nylegnakir/" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/nellysosobrado" class="social-icon"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/nylegnakir/" class="social-icon"><i class="bi bi-linkedin"></i></a>
         </div>
         <div class="hero-buttons">
             <a href="~/images/CV_NylegnaKir_Sosobrado.pdf" download class="cta-button secondary">Download my CV</a>
             <a href="#projekt" class="cta-button secondary">My Projects</a>
-            <a href="#kontakt" class="cta-button secondary">Contact Me</a>
-        </div>
-    </div>
-</header>
+            <a onclick="copyEmail()" class="cta-button secondary">Contact Me</a>
 
-<section id="about" class="about-content improved-about">
-    <div class="about-container">
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>
-                I'm <strong>Nylegna Kir Sosobrado</strong>, a passionate and detail-oriented .NET Developer Student based in Huddinge, Sweden.
-                <br /><br />
-                I thrive on solving problems with clean, maintainable code and enjoy transforming ideas into fully functional applications.
-                I’m currently studying at KYH Liljeholmen and constantly exploring new technologies within the Microsoft ecosystem and modern web.
-                <br /><br />
-                I’m driven, curious, and ready to contribute to real-world projects through internships or junior developer roles.
-            </p>
         </div>
-        <div class="about-photo">
-            <img src="~/Images/Nelly.jpg" alt="Nylegna Kir Sosobrado" />
+
+    </div>
+</section>
+
+
+@* Carousel of skills *@
+<section id="skills" class="skills-carousel-section">
+    <div class="carousel-track">
+
+        <div class="carousel-item"><i class="bi bi-code-slash"></i><h4>C# / .NET</h4></div>
+        <div class="carousel-item"><i class="bi bi-window-desktop"></i><h4>Razor Pages / MVC</h4></div>
+        <div class="carousel-item"><i class="bi bi-database"></i><h4>EF Core</h4></div>
+        <div class="carousel-item"><i class="bi bi-filetype-html"></i><h4>HTML / CSS / JS</h4></div>
+        <div class="carousel-item"><i class="bi bi-server"></i><h4>SQL</h4></div>
+        <div class="carousel-item"><i class="bi bi-github"></i><h4>Git & GitHub</h4></div>
+
+
+        <div class="carousel-item"><i class="bi bi-code-slash"></i><h4>C# / .NET</h4></div>
+        <div class="carousel-item"><i class="bi bi-window-desktop"></i><h4>Razor Pages / MVC</h4></div>
+        <div class="carousel-item"><i class="bi bi-database"></i><h4>EF Core</h4></div>
+        <div class="carousel-item"><i class="bi bi-filetype-html"></i><h4>HTML / CSS / JS</h4></div>
+        <div class="carousel-item"><i class="bi bi-server"></i><h4>SQL</h4></div>
+        <div class="carousel-item"><i class="bi bi-github"></i><h4>Git & GitHub</h4></div>
+    </div>
+</section>
+
+@* about me *@
+<section id="about" class="about-section clean-about">
+    <div class="about-wrapper">
+        <div class="about-heading">
+            <i class="bi bi-person-lines-fill"></i>
+        </div>
+
+        <p class="intro">
+            My name is <strong>Nylegna Kir Sosobrado</strong>, a 26-year-old .NET Developer student based in Huddinge, Sweden. I currently work as an airport security officer at Arlanda.
+        </p>
+        <p>
+            In my free time, I enjoy spending time with animals, reading webtoons, watching anime, and exploring all kinds of hobbies. I'm also a gamer who loves everything from fast-paced FPS games to immersive MMORPGs. As a developer, I'm passionate about learning new technologies.
+        </p>
+        <p>
+            I'm currently looking for an internship (LIA) starting in early 2026, where I can grow as a developer, contribute to real projects, and be part of a professional team.
+        </p>
+
+
+
+        <div class="about-highlights">
+            <h3>What I'm good at</h3>
+            <div class="highlight-grid">
+                <div class="highlight-item">
+                    <i class="bi bi-code-slash"></i>
+                    <span>Clean & maintainable code</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="bi bi-diagram-3"></i>
+                    <span>REST API development</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="bi bi-database"></i>
+                    <span>SQL & database design</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="bi bi-bug"></i>
+                    <span>Debugging & problem-solving</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="bi bi-journal-check"></i>
+                    <span>Attention to detail</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="bi bi-calendar-check"></i>
+                    <span>Self-discipline & organization</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="about-cta">
+            <a href="#kontakt" class="cta-button soft">Let's connect</a>
         </div>
     </div>
 </section>
 
-<main>
+@* Portfolio SECTION *@
 
 
-    <!-- Skills Carousel -->
-    <section id="skills" class="skills-carousel-section">
-        <h2 class="cv-header">My Skills</h2>
-        <div class="carousel-wrapper">
-            <div class="skills-carousel" id="skills-carousel">
-                <div class="carousel-item"><h4>C# / .NET</h4></div>
-                <div class="carousel-item"><h4>Razor Pages / MVC</h4></div>
-                <div class="carousel-item"><h4>Entity Framework Core</h4></div>
-                <div class="carousel-item"><h4>HTML / CSS / JS</h4></div>
-                <div class="carousel-item"><h4>SQL</h4></div>
-                <div class="carousel-item"><h4>Git & GitHub</h4></div>
+<section id="projects" class="coding-projects">
+    <h2 class="section-title">Portfolio</h2>
+    <p class="section-subtitle">Here are some of my school and personal projects built with .NET and C#.</p>
+
+    <div class="project-list">
+        <!-- Project 1 -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="~/images/CashierApp.png" alt="Cashier system in console" />
             </div>
-        </div>
-    </section>
-
-
-    <!-- Projects -->
-    <section id="projekt" class="projects">
-        <h2>Project Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="~/images/CashierApp.png" alt="CashierApp" />
-                <div class="gallery-overlay">
-                    <h3>Cashier console application</h3>
-                    <p>A simple console-based checkout system with campaigns, receipts and JSON persistence.</p>
-                    <a href="https://github.com/nellysosobrado/CashierApp" target="_blank" class="project-link">See details</a>
+            <div class="project-details">
+                <h3>Cashier System (Console App)</h3>
+                <div class="tech-used">
+                    <span class="tech">C#</span>
+                    <span class="tech">OOP</span>
+                    <span class="tech">SOLID</span>
                 </div>
-            </div>
-            <div class="gallery-item">
-                <img src="~/images/HotelBookingApp.png" alt="HotelBookingApp" />
-                <div class="gallery-overlay">
-                    <h3>Hotelbooking console application</h3>
-                    <p>Manages guests, bookings, payments – built using EF Core and FluentValidation.</p>
-                    <a href="https://github.com/nellysosobrado/HotelBookingApp" target="_blank" class="project-link">See details</a>
+                <p class="project-desc">
+                    A cashier system with inventory management, receipt generation, and transaction history.
+                    <strong>Focus on:</strong> Code structure, inheritance, and interfaces.
+                </p>
+                <div class="project-actions">
+                    <a href="https://github.com/nellysosobrado/CashierApp" target="_blank" class="btn-code">
+                        <i class="fas fa-code"></i> View Code
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- References -->
-    <section id="referenser" class="cv-section">
-        <div class="cv-container">
-            <h2 class="cv-header">References</h2>
-            <div class="cv-grid">
-                <div class="cv-box">
-                    <h3>Teacher Reference</h3>
-                    <div class="cv-item">
-                        <h4>Maria Andersson</h4>
-                        <span class="role">Instructor, KYH</span><br />
-                        <span class="date">2024</span>
-                        <p>“Nylegna is a highly motivated student with strong technical skills and great potential.”</p>
-                    </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="~/images/HotelBookingApp.png" alt="Hotel booking system" />
+            </div>
+            <div class="project-details">
+                <h3>Hotel Booking System</h3>
+                <div class="tech-used">
+                    <span class="tech">C#</span>
+                    <span class="tech">EF Core</span>
+                    <span class="tech">SQLite</span>
                 </div>
-                <div class="cv-box">
-                    <h3>Peer Reference</h3>
-                    <div class="cv-item">
-                        <h4>Alex Karlsson</h4>
-                        <span class="role">Classmate</span><br />
-                        <span class="date">2024</span>
-                        <p>“Great team player, problem solver and always willing to help others.”</p>
-                    </div>
+                <p class="project-desc">
+                    A system to manage rooms, bookings, and customers using Entity Framework Core.
+                    <strong>Focus on:</strong> Database handling, LINQ, and CRUD operations.
+                </p>
+                <div class="project-actions">
+                    <a href="https://github.com/nellysosobrado/HotelBookingApp" target="_blank" class="btn-code">
+                        <i class="fas fa-code"></i> View Code
+                    </a>
+                    <a href="https://your-app-name.azurewebsites.net" target="_blank" class="btn btn-demo">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact -->
-    <section id="kontakt" class="contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <div class="form-group">
-                <input type="text" name="name" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" placeholder="Your email" required />
-            </div>
-            <div class="form-group">
-                <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="cta-button primary">Send</button>
-            </div>
-        </form>
-    </section>
-</main>
 
-<!-- Footer -->
-<footer>
-    <p>&copy; @DateTime.Now.Year Nylegna Kir Sosobrado. All rights reserved.</p>
-</footer>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
