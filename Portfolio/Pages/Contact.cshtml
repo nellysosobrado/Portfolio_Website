@@ -1,0 +1,38 @@
+﻿@page
+@model ContactModel
+
+<section id="kontakt" class="about-section contact-section">
+    <div class="about-wrapper">
+        <div class="about-heading">
+            <i class="bi bi-envelope-fill"></i>
+        </div>
+
+        <h2 class="section-title">Kontakta mig</h2>
+        <p class="section-subtitle">Fyll i formuläret om du vill komma i kontakt med mig.</p>
+
+        @if (!string.IsNullOrEmpty(Model.FeedbackMessage))
+        {
+            <p>@Model.FeedbackMessage</p>
+        }
+
+        <form method="post" class="contact-form">
+            <div class="form-group">
+                <input asp-for="ContactForm.Name" placeholder="Ditt namn" class="form-control" />
+                <span asp-validation-for="ContactForm.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="ContactForm.Email" placeholder="Din e-postadress" class="form-control" />
+                <span asp-validation-for="ContactForm.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <textarea asp-for="ContactForm.Message" placeholder="Skriv ditt meddelande här..." rows="5" class="form-control"></textarea>
+                <span asp-validation-for="ContactForm.Message" class="text-danger"></span>
+            </div>
+            <button type="submit" class="cta-button">Skicka</button>
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

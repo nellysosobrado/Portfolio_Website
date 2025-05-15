@@ -16,12 +16,14 @@
 @* about me partial *@
 @await Html.PartialAsync("Partials/_AboutPartial")
 
-
+<section id="about-me">
+    @await Html.PartialAsync("Partials/_AboutPartial", Model.Projects)
+</section>
 
 
 @* Projects Portfolio Display (WITH API+ SQL) *@
 <section id="portfolio-api">
-    @await Html.PartialAsync("_ProjectListPartial", Model.Projects)
+    @await Html.PartialAsync("Partials/_ProjectListPartial", Model.Projects)
 </section>
 
 @* contact *@ 
