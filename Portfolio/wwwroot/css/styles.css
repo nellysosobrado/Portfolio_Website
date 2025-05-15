@@ -1,5 +1,7 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
+
+
 * {
     margin: 0;
     padding: 0;
@@ -122,6 +124,7 @@ nav {
         transform: none;
         box-shadow: none;
     }
+
 
 /* Sections */
 section {
@@ -258,15 +261,16 @@ footer {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #dad873;
-    box-shadow: 0 0 20px rgba(218, 216, 115, 0.3);
+    border: 4px solid #ccc; /* neutral grå */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* mjuk skugga */
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
     .profile-image:hover {
         transform: scale(1.05);
-        border-color: #c5c366;
+        border-color: #999; /* mörkare grå vid hover */
     }
+
 
 /* Om mig sektion */
 .about-content {
@@ -589,13 +593,13 @@ footer {
         background-color: #007bff;
         color: white;
         border: 2px solid #007bff;
-        box-shadow: 0 0 15px rgba(255, 251, 40, 0.774);
+        box-shadow: none;
     }
 
         .cta-button.primary:hover {
             background-color: transparent;
             color: #007bff;
-            box-shadow: 0 0 15px rgba(255, 251, 40, 0.774);
+            box-shadow: none;
         }
 
     .cta-button.secondary {
@@ -607,7 +611,7 @@ footer {
         .cta-button.secondary:hover {
             background-color: #333;
             color: white;
-            box-shadow: 0 0 15px rgba(255, 251, 40, 0.774);
+            box-shadow: none;
         }
 
     .cta-button i {
