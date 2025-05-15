@@ -133,75 +133,9 @@
 @* about me + ref *@
 
 
-@* Projects Display (WITH API+ SQL) *@
+@* Projects Portfolio Display (WITH API+ SQL) *@
 <section id="portfolio-api">
-    <h2 class="section-title">Portfolio API-projekt</h2>
-    <p class="section-subtitle">Hämtade direkt från mitt .NET Web API.</p>
-
     @await Html.PartialAsync("_ProjectListPartial", Model.Projects)
-</section>
-
-
-
-@* Portfolio SECTION *@
-
-
-<section id="projects" class="coding-projects">
-    <h2 class="section-title">Portfolio</h2>
-    <p class="section-subtitle">Here are some of my school and personal projects built with .NET and C#.</p>
-
-    <div class="project-list">
-        <!-- Project 1 -->
-        <div class="project-card">
-            <div class="project-image">
-                <img src="~/images/CashierApp.png" alt="Cashier system in console" />
-            </div>
-            <div class="project-details">
-                <h3>Cashier System (Console App)</h3>
-                <div class="tech-used">
-                    <span class="tech">C#</span>
-                    <span class="tech">OOP</span>
-                    <span class="tech">SOLID</span>
-                </div>
-                <p class="project-desc">
-                    A cashier system with inventory management, receipt generation, and transaction history.
-                    <strong>Focus on:</strong> Code structure, inheritance, and interfaces.
-                </p>
-                <div class="project-actions">
-                    <a href="https://github.com/nellysosobrado/CashierApp" target="_blank" class="btn-code">
-                        <i class="fas fa-code"></i> View Code
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-            <div class="project-image">
-                <img src="~/images/HotelBookingApp.png" alt="Hotel booking system" />
-            </div>
-            <div class="project-details">
-                <h3>Hotel Booking System</h3>
-                <div class="tech-used">
-                    <span class="tech">C#</span>
-                    <span class="tech">EF Core</span>
-                    <span class="tech">SQLite</span>
-                </div>
-                <p class="project-desc">
-                    A system to manage rooms, bookings, and customers using Entity Framework Core.
-                    <strong>Focus on:</strong> Database handling, LINQ, and CRUD operations.
-                </p>
-                <div class="project-actions">
-                    <a href="https://github.com/nellysosobrado/HotelBookingApp" target="_blank" class="btn-code">
-                        <i class="fas fa-code"></i> View Code
-                    </a>
-                    <a href="https://your-app-name.azurewebsites.net" target="_blank" class="btn btn-demo">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 
 
