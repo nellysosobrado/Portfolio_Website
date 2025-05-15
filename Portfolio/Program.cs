@@ -1,3 +1,6 @@
+using DAL.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Portfolio
 {
     public class Program
@@ -10,6 +13,8 @@ namespace Portfolio
             builder.Services.AddRazorPages();
 
             builder.Services.AddHttpClient();
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
             var app = builder.Build();

@@ -26,8 +26,15 @@
     @await Html.PartialAsync("Partials/_ProjectListPartial", Model.Projects)
 </section>
 
+
 @* contact *@ 
-@await Html.PartialAsync("Partials/_ContactPartial")
+ @* @await Html.PartialAsync("Partials/_ContactPartial")  *@
+
+
+
+<a href="/Contact" class="cta-button primary">
+    Kontakta mig
+</a>
 
 
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />

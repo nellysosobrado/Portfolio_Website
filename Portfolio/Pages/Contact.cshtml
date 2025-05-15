@@ -1,0 +1,31 @@
+﻿@page
+@model Portfolio.Pages.ContactModel
+@{
+    Layout = null; // valfritt – kan vara "_Layout" om du vill
+}
+
+<h2>Kontakta mig</h2>
+
+@if (TempData["Feedback"] is string feedback)
+{
+    <p style="color: green;">@feedback</p>
+}
+
+<form method="post">
+    <div>
+        <label for="name">Namn</label>
+        <input asp-for="Name" id="name" placeholder="Ditt namn" required />
+    </div>
+
+    <div>
+        <label for="email">E-post</label>
+        <input asp-for="Email" id="email" type="email" placeholder="Din e-post" required />
+    </div>
+
+    <div>
+        <label for="message">Meddelande</label>
+        <textarea asp-for="Message" id="message" placeholder="Skriv ditt meddelande..." rows="5" required></textarea>
+    </div>
+
+    <button type="submit">Skicka</button>
+</form>
