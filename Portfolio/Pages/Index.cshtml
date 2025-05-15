@@ -133,6 +133,15 @@
 @* about me + ref *@
 
 
+@* Projects Display (WITH API+ SQL) *@
+<section id="portfolio-api">
+    <h2 class="section-title">Portfolio API-projekt</h2>
+    <p class="section-subtitle">Hämtade direkt från mitt .NET Web API.</p>
+
+    @await Html.PartialAsync("_ProjectListPartial", Model.Projects)
+</section>
+
+
 
 @* Portfolio SECTION *@
 

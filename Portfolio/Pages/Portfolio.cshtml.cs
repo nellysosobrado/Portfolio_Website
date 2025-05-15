@@ -1,31 +1,26 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Net.Http;
 using System.Net.Http.Json;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Portfolio.Models;
 
-namespace Portfolio.Pages
+public class PortfolioModel : PageModel
 {
-    public class PortfolioModel : PageModel
+    private readonly HttpClient _http;
+
+    public PortfolioModel(IHttpClientFactory factory)
     {
-        private readonly HttpClient _http;
+        _http = factory.CreateClient();
+    }
 
-        public PortfolioModel(IHttpClientFactory factory)
+    public List<ProjectViewModel> Projects { get; set; } = new();
+
+    public async Task OnGetAsync()
+    {
+        var apiUrl = "https://localhost:7253/api/projects";
+        var result = await _http.GetFromJsonAsync<List<ProjectViewModel>>(apiUrl);
+        if (result != null)
         {
-            _http = factory.CreateClient();
-        }
-
-        public List<ProjectViewModel> Projects { get; set; } = new();
-
-        public async Task OnGetAsync()
-        {
-
-            var apiUrl = "https://localhost:7253/api/projects";
-            var result = await _http.GetFromJsonAsync<List<ProjectViewModel>>(apiUrl);
-
-            if (result != null)
-                Projects = result;
+            Projects = result;
         }
     }
 }
