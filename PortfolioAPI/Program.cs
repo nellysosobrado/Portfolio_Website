@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using PortfolioAPI.Data;
 
@@ -10,19 +9,20 @@ namespace PortfolioAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
+            // Lägg till controllers
             builder.Services.AddControllers();
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-            builder.Services.AddOpenApi();
 
+            // Lägg till Swagger (OpenAPI)
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+            // Lägg till databas
             builder.Services.AddDbContext<PortfolioContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
-            builder.Services.AddControllers();
             var app = builder.Build();
 
+            // Migrera och seeda databas
             using (var scope = app.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<PortfolioContext>();
@@ -30,16 +30,16 @@ namespace PortfolioAPI
                 SeedData.Initialize(db);
             }
 
-
+            // Aktivera Swagger i utvecklingsläge
             if (app.Environment.IsDevelopment())
             {
-                app.MapOpenApi();
+                app.UseSwagger();
+                app.UseSwaggerUI(); // <- Det här gör så du får en snygg Swagger-sida i webbläsaren
             }
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
