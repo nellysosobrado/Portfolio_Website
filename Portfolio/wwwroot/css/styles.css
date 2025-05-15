@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+
 
 * {
     margin: 0;
@@ -122,6 +124,7 @@ nav {
         transform: none;
         box-shadow: none;
     }
+
 
 /* Sections */
 section {
@@ -258,15 +261,16 @@ footer {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #dad873;
-    box-shadow: 0 0 20px rgba(218, 216, 115, 0.3);
+    border: 4px solid #ccc; /* neutral grå */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* mjuk skugga */
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
     .profile-image:hover {
         transform: scale(1.05);
-        border-color: #c5c366;
+        border-color: #999; /* mörkare grå vid hover */
     }
+
 
 /* Om mig sektion */
 .about-content {
@@ -414,7 +418,7 @@ footer {
     color: #efeeb4;
 }
 
-/* Knappar och l�nkar */
+/* Knappar och länkar */
 .project-link, .cta-button, button {
     background-color: #ffffff;
     color: #333333;
@@ -509,7 +513,7 @@ footer {
         }
 
             .cv-item ul li:before {
-                content: "�";
+                content: "•";
                 color: #309975;
                 position: absolute;
                 left: 0;
@@ -589,13 +593,13 @@ footer {
         background-color: #007bff;
         color: white;
         border: 2px solid #007bff;
-        box-shadow: 0 0 15px rgba(255, 251, 40, 0.774);
+        box-shadow: none;
     }
 
         .cta-button.primary:hover {
             background-color: transparent;
             color: #007bff;
-            box-shadow: 0 0 15px rgba(255, 251, 40, 0.774);
+            box-shadow: none;
         }
 
     .cta-button.secondary {
@@ -607,7 +611,7 @@ footer {
         .cta-button.secondary:hover {
             background-color: #333;
             color: white;
-            box-shadow: 0 0 15px rgba(255, 251, 40, 0.774);
+            box-shadow: none;
         }
 
     .cta-button i {
@@ -689,7 +693,7 @@ footer {
     }
 }
 
-/* Hero-content ska ligga ovanp� */
+/* Hero-content ska ligga ovanpå */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -865,4 +869,313 @@ footer {
 
     .highlight-item:hover {
         transform: translateY(-2px);
+    }
+
+
+
+/*Portfolio secitiom.------------*/
+.coding-projects {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+/*project card--*/
+.project-card {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/*---*/
+.project-image {
+    flex: 1;
+    min-width: 300px;
+    background: #f5f5f5;
+}
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.project-details {
+    flex: 2;
+    padding: 1.5rem;
+}
+
+.tech-used {
+    margin: 0.8rem 0;
+}
+
+.tech {
+    display: inline-block;
+    background: #e0f7fa;
+    color: #00796b;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.project-desc {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-actions {
+    margin-top: auto;
+}
+
+.btn-code {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #2c3e50;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+    .btn-code:hover {
+        background: #1a252f;
+    }
+
+/* Responsivitet för mobiler */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-image {
+        min-width: 100%;
+        max-height: 200px;
+    }
+}
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+/* Live Demo – ljus och vänlig */
+.btn-demo {
+    background: linear-gradient(145deg, #f4f4f4, #e6e6e6);
+    color: #2c2c2c;
+    border: 1px solid #d2d2d2;
+    margin-left: 0.5rem;
+}
+
+    .btn-demo:hover {
+        background: linear-gradient(145deg, #e1e1e1, #d3d3d3);
+        color: #000;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+/* View Code – nästan likadan men med tunn kant + ikon */
+.btn-code {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: #f4f4f4;
+    background: linear-gradient(145deg, #4a4a4a, #3a3a3a);
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+    .btn-code:hover {
+        background: linear-gradient(145deg, #5a5a5a, #464646);
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+
+
+
+/*Portfolio secitiom.------------*/
+
+
+/*REFERENCE SECITON---*/
+.about-references {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.references-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.reference-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.reference-card {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 1.2rem;
+    font-size: 0.92rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+    .reference-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .reference-card h4 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+    }
+
+.reference-role {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.6rem;
+}
+
+.reference-quote {
+    font-style: italic;
+    margin-bottom: 0.6rem;
+    color: #333;
+}
+
+.reference-contact {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+@media (min-width: 768px) {
+    .reference-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*contact*/
+/* Kontakt */
+.contact-section {
+    padding: 4rem 1.5rem;
+    background-color: #f9f9f9;
+}
+
+    .contact-section .about-wrapper {
+        background-color: #fff;
+        padding: 2.5rem;
+        border-radius: 16px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 0.9rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color 0.2s;
+    }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #666;
+        }
+
+    .contact-form button.cta-button {
+        margin-top: 1rem;
+        padding: 0.8rem 2rem;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+        .contact-form button.cta-button:hover {
+            background-color: #555;
+        }
+
+
+/* Footer */
+.site-footer {
+    background-color: #222;
+    color: #ddd;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-links a {
+    color: #ddd;
+    margin: 0 0.5rem;
+    font-size: 1.4rem;
+    transition: color 0.2s;
+}
+
+    .footer-links a:hover {
+        color: #fff;
     }

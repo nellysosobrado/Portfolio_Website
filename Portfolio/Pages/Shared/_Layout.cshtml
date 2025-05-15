@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -16,6 +17,10 @@
             <ul class="nav-links">
                 <li><a href="#hem" class="nav-link">About Me</a></li>
                 <li><a href="#projekt" class="nav-link">Projects</a></li>
+                <li><a asp-page="/Portfolio">Portfolio API</a></li>
+                <li><a href="#portfolio-api" class="nav-link">Portfolio API</a></li>
+
+
             </ul>
         </div>
     </nav>
@@ -23,6 +28,16 @@
     <main role="main">
         @RenderBody()
     </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; @DateTime.Now.Year Nylegna Kir Sosobrado. Alla rättigheter förbehållna.</p>
+            <div class="footer-links">
+                <a href="https://github.com/nellysosobrado" target="_blank"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/in/nylegnakir" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <a href="mailto:din.epost@domain.se"><i class="bi bi-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
 
     <script src="~/js/script.js"></script>
 </body>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Portfolio.Models.ProjectViewModel>
+
+<section id="projects" class="coding-projects">
+    <h2 class="section-title">Portfolio</h2>
+    <p class="section-subtitle">Here are some of my school and personal projects built with .NET and C#.</p>
+
+    <div class="project-list">
+        @foreach (var project in Model)
+        {
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="@project.ImageUrl" alt="@project.Name" />
+                </div>
+                <div class="project-details">
+                    <h3>@project.Name</h3>
+                    <div class="tech-used">
+                        @foreach (var tech in project.TechStack.Split(',', StringSplitOptions.TrimEntries))
+                        {
+                            <span class="tech">@tech</span>
+                        }
+                    </div>
+                    <p class="project-desc">@project.Description</p>
+                    <div class="project-actions">
+                        @if (!string.IsNullOrWhiteSpace(project.GithubUrl))
+                        {
+                            <a href="@project.GithubUrl" target="_blank" class="btn-code">
+                                <i class="fas fa-code"></i> View Code
+                            </a>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(project.LiveDemoUrl))
+                        {
+                            <a href="@project.LiveDemoUrl" target="_blank" class="btn btn-demo">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+

@@ -5,132 +5,31 @@
     Layout = "_Layout";
 }
 
-<section id="hem" class="hero">
-    <div class="hero-content">
-        <img src="~/images/Nelly.jpg" alt="Nelly" class="profile-image">
-        <h1>Nylegna Kir Sosobrado</h1>
-        <p>.NET Developer Student <br /> at KYH Liljeholmen</p>
-        <div class="hero-description">
-            <p>Based in Sweden, Huddinge</p>
-        </div>
-        <div class="social-links">
-            <a href="https://github.com/nellysosobrado" class="social-icon"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/nylegnakir/" class="social-icon"><i class="bi bi-linkedin"></i></a>
-        </div>
-        <div class="hero-buttons">
-            <a href="~/images/CV_NylegnaKir_Sosobrado.pdf" download class="cta-button secondary">Download my CV</a>
-            <a href="#projekt" class="cta-button secondary">My Projects</a>
-            <a onclick="copyEmail()" class="cta-button secondary">Contact Me</a>
+@* test hero *@
+@await Html.PartialAsync("Partials/_HeroPartial")
+@* </section> *@
 
-        </div>
-       
-    </div>
+@* skill section *@
+@await Html.PartialAsync("Partials/_SkillsPartial")
+@* </section> *@
+
+@* about me partial *@
+@await Html.PartialAsync("Partials/_AboutPartial")
+
+
+
+
+@* Projects Portfolio Display (WITH API+ SQL) *@
+<section id="portfolio-api">
+    @await Html.PartialAsync("_ProjectListPartial", Model.Projects)
 </section>
 
-
-@* Carousel of skills *@
-<section id="skills" class="skills-carousel-section">
-    <div class="carousel-track">
-
-        <div class="carousel-item"><i class="bi bi-code-slash"></i><h4>C# / .NET</h4></div>
-        <div class="carousel-item"><i class="bi bi-window-desktop"></i><h4>Razor Pages / MVC</h4></div>
-        <div class="carousel-item"><i class="bi bi-database"></i><h4>EF Core</h4></div>
-        <div class="carousel-item"><i class="bi bi-filetype-html"></i><h4>HTML / CSS / JS</h4></div>
-        <div class="carousel-item"><i class="bi bi-server"></i><h4>SQL</h4></div>
-        <div class="carousel-item"><i class="bi bi-github"></i><h4>Git & GitHub</h4></div>
+@* contact *@ 
+@await Html.PartialAsync("Partials/_ContactPartial")
 
 
-        <div class="carousel-item"><i class="bi bi-code-slash"></i><h4>C# / .NET</h4></div>
-        <div class="carousel-item"><i class="bi bi-window-desktop"></i><h4>Razor Pages / MVC</h4></div>
-        <div class="carousel-item"><i class="bi bi-database"></i><h4>EF Core</h4></div>
-        <div class="carousel-item"><i class="bi bi-filetype-html"></i><h4>HTML / CSS / JS</h4></div>
-        <div class="carousel-item"><i class="bi bi-server"></i><h4>SQL</h4></div>
-        <div class="carousel-item"><i class="bi bi-github"></i><h4>Git & GitHub</h4></div>
-    </div>
-</section>
-
-@* about me *@
-<section id="about" class="about-section clean-about">
-    <div class="about-wrapper">
-        <div class="about-heading">
-            <i class="bi bi-person-lines-fill"></i>
-        </div>
-
-        <p class="intro">
-            My name is <strong>Nylegna Kir Sosobrado</strong>, a 26-year-old .NET Developer student based in Huddinge, Sweden. I currently work as an airport security officer at Arlanda.
-        </p>
-        <p>
-            In my free time, I enjoy spending time with animals, reading webtoons, watching anime, and exploring all kinds of hobbies. I'm also a gamer who loves everything from fast-paced FPS games to immersive MMORPGs. As a developer, I'm passionate about learning new technologies.
-        </p>
-        <p>
-            I'm currently looking for an internship (LIA) starting in early 2026, where I can grow as a developer, contribute to real projects, and be part of a professional team.
-        </p>
-
-
-
-        <div class="about-highlights">
-            <h3>What I'm good at</h3>
-            <div class="highlight-grid">
-                <div class="highlight-item">
-                    <i class="bi bi-code-slash"></i>
-                    <span>Clean & maintainable code</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="bi bi-diagram-3"></i>
-                    <span>REST API development</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="bi bi-database"></i>
-                    <span>SQL & database design</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="bi bi-bug"></i>
-                    <span>Debugging & problem-solving</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="bi bi-journal-check"></i>
-                    <span>Attention to detail</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="bi bi-calendar-check"></i>
-                    <span>Self-discipline & organization</span>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="about-cta">
-            <a href="#kontakt" class="cta-button soft">Let's connect</a>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-<section id="projekt" class="projects">
-    <h2>Project Gallery</h2>
-    <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="~/images/CashierApp.png" alt="Project 1" />
-            <div class="gallery-overlay">
-                <h3>Cashier console application</h3>
-                <p>
-                    A simple console-based checkout system...
-                </p>
-                <a href="https://github.com/nellysosobrado/CashierApp" target="_blank" class="project-link">See details</a>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="~/images/HotelBookingApp.png" alt="Project 2" />
-            <div class="gallery-overlay">
-                <h3>Hotelbooking console application</h3>
-                <p>
-                    C# console app with bookings and EF Core...
-                </p>
-                <a href="https://github.com/nellysosobrado/HotelBookingApp" target="_blank" class="project-link">See details</a>
-            </div>
-        </div>
-    </div>
-</section>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
