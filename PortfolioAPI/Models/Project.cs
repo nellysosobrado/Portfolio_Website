@@ -9,4 +9,6 @@ public class Project
     public DateTime CreatedDate { get; set; }
     public string GithubUrl { get; set; } = string.Empty;
     public string LiveDemoUrl { get; set; } = string.Empty;
+    public string ImageUrl { get; set; } = string.Empty;
+
 }

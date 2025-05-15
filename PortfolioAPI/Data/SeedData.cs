@@ -16,7 +16,8 @@ namespace PortfolioAPI.Data
                         Description = "Bankapplikation med kontoöversikt och transaktioner",
                         CreatedDate = new DateTime(2025, 4, 10),
                         GithubUrl = "https://github.com/dittkonto/bankapp",
-                        LiveDemoUrl = "https://dindemo.azurewebsites.net"
+                        LiveDemoUrl = "https://dindemo.azurewebsites.net",
+                        ImageUrl = "/images/Nelly.jpg"
                     },
                     new Project
                     {
@@ -25,9 +26,11 @@ namespace PortfolioAPI.Data
                         Description = "REST-API för annonser",
                         CreatedDate = new DateTime(2025, 5, 1),
                         GithubUrl = "https://github.com/dittkonto/annons-api",
-                        LiveDemoUrl = ""
+                        LiveDemoUrl = "",
+                        ImageUrl = "/images/Nelly.jpg"
                     }
                 );
+
                 context.SaveChanges();
             }
         }

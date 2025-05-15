@@ -1,58 +1,44 @@
 ﻿@model IEnumerable<Portfolio.Models.ProjectViewModel>
 
-<div class="project-grid">
-    @foreach (var project in Model)
-    {
-        <div class="project-card">
-            <h3>@project.Name</h3>
-            <p><strong>Teknik:</strong> @project.TechStack</p>
-            <p>@project.Description</p>
+<section id="projects" class="coding-projects">
+    <h2 class="section-title">Portfolio</h2>
+    <p class="section-subtitle">Here are some of my school and personal projects built with .NET and C#.</p>
 
-            <div class="project-links">
-                @if (!string.IsNullOrWhiteSpace(project.GithubUrl))
-                {
-                    <a href="@project.GithubUrl" class="btn btn-outline-dark btn-sm me-2" target="_blank">
-                        <i class="bi bi-github"></i> GitHub
-                    </a>
-                }
-                @if (!string.IsNullOrWhiteSpace(project.LiveDemoUrl))
-                {
-                    <a href="@project.LiveDemoUrl" class="btn btn-outline-primary btn-sm" target="_blank">
-                        <i class="bi bi-box-arrow-up-right"></i> Live Demo
-                    </a>
-                }
+    <div class="project-list">
+        @foreach (var project in Model)
+        {
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="@project.ImageUrl" alt="@project.Name" />
+                </div>
+                <div class="project-details">
+                    <h3>@project.Name</h3>
+                    <div class="tech-used">
+                        @foreach (var tech in project.TechStack.Split(',', StringSplitOptions.TrimEntries))
+                        {
+                            <span class="tech">@tech</span>
+                        }
+                    </div>
+                    <p class="project-desc">@project.Description</p>
+                    <div class="project-actions">
+                        @if (!string.IsNullOrWhiteSpace(project.GithubUrl))
+                        {
+                            <a href="@project.GithubUrl" target="_blank" class="btn-code">
+                                <i class="bi bi-github"></i> View Code
+                            </a>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(project.LiveDemoUrl))
+                        {
+                            <a href="@project.LiveDemoUrl" target="_blank" class="btn btn-demo">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+
+                        }
+                    </div>
+                </div>
             </div>
-        </div>
-    }
-</div>
-
-<style>
-    .project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-
-    .project-card {
-        background-color: #fff;
-        border: 1px solid #dee2e6;
-        border-radius: 8px;
-        padding: 1.2rem;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-        transition: transform 0.2s ease-in-out;
-    }
-
-        .project-card:hover {
-            transform: translateY(-4px);
         }
+    </div>
+</section>
 
-        .project-card h3 {
-            margin-top: 0;
-            font-size: 1.3rem;
-        }
 
-    .project-links {
-        margin-top: 1rem;
-    }
-</style>

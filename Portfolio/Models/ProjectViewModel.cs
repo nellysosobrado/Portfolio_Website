@@ -9,5 +9,7 @@
         public DateTime CreatedDate { get; set; }
         public string GithubUrl { get; set; } = "";
         public string LiveDemoUrl { get; set; } = "";
+        public string? ImageUrl { get; set; }
+
     }
 }
