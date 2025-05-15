@@ -1,10 +1,10 @@
-﻿using PortfolioAPI.Models;
+﻿using DAL.Models;
 
-namespace PortfolioAPI.Data
+namespace DAL.Data
 {
     public static class SeedData
     {
-        public static void Initialize(PortfolioContext context)
+        public static void Initialize(ApplicationDbContext context)
         {
             if (!context.Projects.Any())
             {

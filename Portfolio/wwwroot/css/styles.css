@@ -1,12 +1,12 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
-
-
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body {
     font-family: 'Manrope', sans-serif;
@@ -693,15 +693,7 @@ footer {
     }
 }
 
-<<<<<<< HEAD
-/* Hero-content ska ligga ovanp� */
-=======
-/* Hero-content ska ligga ovanpå */
->>>>>>> feature/portfolio-start
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
+
 /*carosuel tekniska skillz*/
 
 .skills-carousel-section {
@@ -874,163 +866,7 @@ footer {
     .highlight-item:hover {
         transform: translateY(-2px);
     }
-<<<<<<< HEAD
-=======
-/*Portfolio secitiom.------------*/
-/*.coding-projects {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-}
 
-.section-title {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #7f8c8d;
-    margin-bottom: 2rem;
-}
-
-.project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}*/
-/*project card--*/
-/*.project-card {
-    display: flex;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-
-
-}*/
-/*---*/
-/*.project-image {
-    flex: 1;
-    min-width: 300px;
-    background: #f5f5f5;
-}
-
-    .project-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-.project-details {
-    flex: 2;
-    padding: 1.5rem;
-}
-
-.tech-used {
-    margin: 0.8rem 0;
-}
-
-.tech {
-    display: inline-block;
-    background: #e0f7fa;
-    color: #00796b;
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    margin-right: 0.5rem;
-}
-
-.project-desc {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.project-actions {
-    margin-top: auto;
-}
-
-.btn-code {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #2c3e50;
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.3s;
-}
-
-    .btn-code:hover {
-        background: #1a252f;
-    }*/
-/* Responsivitet för mobiler */
-/*@media (max-width: 768px) {
-    .project-card {
-        flex-direction: column;
-    }
-
-    .project-image {
-        min-width: 100%;
-        max-height: 200px;
-    }
-}
-
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.4rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.3);
-}*/
-/* Live Demo – ljus och vänlig */
-/*.btn-demo {
-    background: linear-gradient(145deg, #f4f4f4, #e6e6e6);
-    color: #2c2c2c;
-    border: 1px solid #d2d2d2;
-    margin-left: 0.5rem;
-}
-
-    .btn-demo:hover {
-        background: linear-gradient(145deg, #e1e1e1, #d3d3d3);
-        color: #000;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    }*/
-/* View Code – nästan likadan men med tunn kant + ikon */
-/*.btn-code {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.4rem;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    text-decoration: none;
-    color: #f4f4f4;
-    background: linear-gradient(145deg, #4a4a4a, #3a3a3a);
-    border: 1px solid #2a2a2a;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
-}
-
-    .btn-code:hover {
-        background: linear-gradient(145deg, #5a5a5a, #464646);
-        color: #ffffff;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }*/
-/*Portfolio secitiom.------------*/
 /* =============================================================
    PORTFOLIO SECTION
 ============================================================= */
@@ -1191,7 +1027,7 @@ footer {
 /* =============================================================
    PORTFOLIO SECTION
 ============================================================= */
-.coding-projects {
+/*.coding-projects {
     padding: 2rem 1rem;
     background-color: #f9f9f9;
 }
@@ -1328,7 +1164,7 @@ footer {
 .btn-demo:hover {
     background: #eaeaea;
     transform: translateY(-2px);
-}
+}*/
 
 
 /*portfolio end*/
@@ -1463,6 +1299,7 @@ footer {
     text-align: center;
 }
 
+
 .footer-content {
     max-width: 800px;
     margin: 0 auto;
@@ -1478,4 +1315,4 @@ footer {
     .footer-links a:hover {
         color: #fff;
     }
->>>>>>> feature/portfolio-start
+

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using PortfolioAPI.Data;
+using DAL.Models;
+using DAL.Data;
 
 namespace PortfolioAPI
 {
@@ -16,8 +17,9 @@ namespace PortfolioAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+
             // Lägg till databas
-            builder.Services.AddDbContext<PortfolioContext>(options =>
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
@@ -25,7 +27,7 @@ namespace PortfolioAPI
             // Migrera och seeda databas
             using (var scope = app.Services.CreateScope())
             {
-                var db = scope.ServiceProvider.GetRequiredService<PortfolioContext>();
+                var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                 db.Database.Migrate();
                 SeedData.Initialize(db);
             }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PortfolioAPI.Data;
-using PortfolioAPI.Models;
+using DAL.Data;
+using DAL.Models;
 
 namespace PortfolioAPI.Controllers;
 
@@ -9,9 +9,9 @@ namespace PortfolioAPI.Controllers;
 [Route("api/[controller]")]
 public class ProjectsController : ControllerBase
 {
-    private readonly PortfolioContext _context;
+    private readonly ApplicationDbContext _context;
 
-    public ProjectsController(PortfolioContext context)
+    public ProjectsController(ApplicationDbContext context)
     {
         _context = context;
     }

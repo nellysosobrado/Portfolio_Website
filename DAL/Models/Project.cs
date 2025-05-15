@@ -1,4 +1,4 @@
-﻿namespace PortfolioAPI.Models;
+﻿namespace DAL.Models;
 
 public class Project
 {
