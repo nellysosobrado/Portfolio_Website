@@ -3,33 +3,40 @@
 
 This project is divided into two main components:
 
-- 🖥️ **Portfolio** – A modern, responsive developer portfolio built using Razor Pages (.NET 9)
-- 🔌 **PortfolioAPI** – A RESTful .NET 9 Web API that supplies structured project data for dynamic display on the portfolio site
+- 🖥️ **Portfolio** – A responsive, personal developer portfolio built with Razor Pages (.NET 9)
+- 🔌 **PortfolioAPI** – A RESTful .NET 9 Web API that provides project data consumed by the portfolio frontend
 
 ---
 
-## 🧰 Tech Stack Overview
+## 🎯 Purpose
+
+To present previous development projects, technical knowledge, and skills through a dynamic and professional portfolio site that consumes a custom-built Web API.
+
+---
+
+## 🧰 Tech Stack
 
 ### 🔷 Portfolio (Frontend – Razor Pages)
-- Built with **ASP.NET Core Razor Pages** (.NET 9)
-- Utilizes **C#, HTML, CSS**, and **Bootstrap Icons**
-- Modular layout using **partial views** and sections
-- Connects to the API via `HttpClient` and displays project cards dynamically
-- Responsive UI optimized for accessibility and usability
 
-### 🔷 PortfolioAPI (Backend – Web API)
-- Built with **ASP.NET Core Web API** (.NET 9)
-- Uses **Entity Framework Core (Code First)** with SQL Server
-- Exposes one main endpoint:
-  - `GET /api/projects` – returns all registered projects
-- Includes **Swagger UI** for testing and interactive documentation
-- Seeded with example project data via `SeedData.cs`
+- **ASP.NET Core Razor Pages (.NET 9)**
+- Partial views used for reusable layout and project components **follows DRY (Don't Repeat Yourself)**
+- Fetches project data from the API using `HttpClient`
+- Clean, responsive UI using HTML, CSS, and Bootstrap Icons
+- Sections include: About Me, Skills, Projects, Contact, References
+
+### 🔷 PortfolioAPI (Backend – .NET Web API)
+
+- **ASP.NET Core Web API (.NET 9)**
+- **Entity Framework Core** (Code First with SQL Server)
+- Exposes:
+  - `GET /api/projects` – Returns all portfolio projects
+- **Swagger UI** enabled for testing and documentation
+- Project data is seeded via `SeedData.cs`
 
 ---
 
-## 📁 Project API – Data Structure
+## 📁 Project Model (API)
 
-### Project Model (C#)
 ```csharp
 public class Project
 {
