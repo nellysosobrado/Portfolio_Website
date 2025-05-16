@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Portfolio.Services
+@inject WeatherService WeatherService
+
+@{
+    var weather = await WeatherService.GetWeatherAsync();
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,11 +13,6 @@
     <title>@ViewData["Title"] - Nylegna Kir Sosobrado</title>
     <link rel="stylesheet" href="~/css/styles.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
 </head>
 <body id="top">
     <nav>
@@ -18,6 +20,7 @@
             <div class="logo">
                 <a href="#top">Nylegna Kir Sosobrado</a>
             </div>
+
             <ul class="nav-links">
                 <li><a href="#about-me" class="nav-link">About Me</a></li>
                 <li><a href="#portfolio-api" class="nav-link">Portfolio</a></li>
@@ -25,7 +28,14 @@
                 <li><a href="~/images/CV_NylegnaKir_Sosobrado.pdf" download class="nav-link">Download my CV</a></li>
                 <li><a href="https://github.com/nellysosobrado" target="_blank"><i class="bi bi-github"></i></a></li>
                 <li><a href="https://linkedin.com/in/nylegnakir" target="_blank"><i class="bi bi-linkedin"></i></a></li>
-                
+                <li class="nav-link weather-info">
+                    @if (weather != null)
+                    {
+                        <span>@weather.Main.Temp&nbsp;°C – @weather.Name</span>
+                    }
+                </li>
+
+
             </ul>
         </div>
     </nav>
@@ -46,6 +56,5 @@
     </footer>
 
     <script src="~/js/script.js"></script>
-
 </body>
 </html>

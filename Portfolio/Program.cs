@@ -1,5 +1,6 @@
 using DAL.Data;
 using Microsoft.EntityFrameworkCore;
+using Portfolio.Services;
 
 namespace Portfolio
 {
@@ -15,6 +16,7 @@ namespace Portfolio
             builder.Services.AddHttpClient();
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddHttpClient<WeatherService>();
 
 
             var app = builder.Build();
