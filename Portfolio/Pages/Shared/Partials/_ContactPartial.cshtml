@@ -1,11 +1,32 @@
-﻿<form method="post" action="/Contact" class="contact-form">
-    <input name="Name" placeholder="Ditt namn" required />
-    <input name="Email" type="email" placeholder="E-post" required />
-    <textarea name="Message" placeholder="Meddelande..." required></textarea>
-    <button type="submit">Skicka</button>
-</form>
+﻿@model Portfolio.Models.ContactFormViewModel
 
-@if (TempData["Feedback"] is string msg)
-{
-    <p style="text-align:center; color:green;">@msg</p>
-}
+<section id="kontakt" class="about-section contact-section">
+    <div class="about-wrapper">
+        <div class="about-heading">
+            <i class="bi bi-envelope-fill"></i>
+        </div>
+
+        <h2 class="section-title"> Contact me</h2>
+        <p class="section-subtitle">Fill in the form to contact me.</p>
+
+        @if (TempData["Feedback"] is string feedback)
+        {
+            <div class="alert alert-success" style="background-color: #d4edda; color: #155724; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                <i class="bi bi-check-circle-fill" style="margin-right: 0.5rem;"></i>@feedback
+            </div>
+        }
+
+        <form method="post" asp-page="/Contact" class="contact-form">
+            <div class="form-group">
+                <input asp-for="Name" placeholder="Your Name" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <input asp-for="Email" type="email" placeholder="Email" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <textarea asp-for="Message" placeholder="Write your message here..." rows="5" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send</button>
+        </form>
+    </div>
+</section>

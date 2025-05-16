@@ -5,17 +5,17 @@
     Layout = "_Layout";
 }
 
-@* test hero *@
-@await Html.PartialAsync("Partials/_HeroPartial")
-@* </section> *@
+@* hero *@
+<section id="hero">
+    @await Html.PartialAsync("Partials/_HeroPartial")
+</section>
 
 @* skill section *@
-@await Html.PartialAsync("Partials/_SkillsPartial")
-@* </section> *@
+<section id="skills">
+    @await Html.PartialAsync("Partials/_SkillsPartial")
+</section>
 
-@* about me partial *@
-@await Html.PartialAsync("Partials/_AboutPartial")
-
+@* about me section *@
 <section id="about-me">
     @await Html.PartialAsync("Partials/_AboutPartial", Model.Projects)
 </section>
@@ -27,14 +27,10 @@
 </section>
 
 
-@* contact *@ 
- @* @await Html.PartialAsync("Partials/_ContactPartial")  *@
-
-
-
-<a href="/Contact" class="cta-button primary">
-    Kontakta mig
-</a>
+ @* Contact FORM SECTION------------* *@
+<section id="kontakt">
+    @await Html.PartialAsync("Partials/_ContactPartial", new Portfolio.Models.ContactFormViewModel())
+</section>
 
 
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />

@@ -2,6 +2,7 @@
 using DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Portfolio.Models;
 
 namespace Portfolio.Pages;
 
@@ -14,31 +15,27 @@ public class ContactModel : PageModel
         _context = context;
     }
 
-    [BindProperty] public string Name { get; set; } = string.Empty;
-    [BindProperty] public string Email { get; set; } = string.Empty;
-    [BindProperty] public string Message { get; set; } = string.Empty;
+    [BindProperty]
+    public ContactFormViewModel Form { get; set; }
 
-    public void OnGet()
-    {
-    }
+    public void OnGet() { }
 
     public async Task<IActionResult> OnPostAsync()
     {
         if (!ModelState.IsValid)
             return Page();
 
-        var contact = new ContactMessage
+        var message = new DAL.Models.ContactMessage
         {
-            Name = Name,
-            Email = Email,
-            Message = Message,
-            SentAt = DateTime.Now
+            Name = Form.Name,
+            Email = Form.Email,
+            Message = Form.Message
         };
 
-        _context.ContactMessages.Add(contact);
+        _context.ContactMessages.Add(message);
         await _context.SaveChangesAsync();
 
-        TempData["Feedback"] = "Tack! Ditt meddelande har skickats.";
-        return RedirectToPage();
+        TempData["Feedback"] = "Thank you for the message!";
+        return Redirect("/Index#kontakt");
     }
 }
