@@ -133,7 +133,7 @@ section {
 }
 
     section:nth-child(even) {
-        background-color: #fafafa;
+        background-color: #ffffff;
     }
 
     section h2 {
@@ -694,57 +694,6 @@ footer {
 }
 
 
-/*carosuel tekniska skillz*/
-
-.skills-carousel-section {
-    overflow: hidden;
-    padding: 2rem 0;
-    background-color: transparent;
-    position: relative;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 2rem;
-    width: max-content;
-    animation: scrollLoop 25s linear infinite;
-}
-
-.carousel-item {
-    flex: 0 0 auto;
-    min-width: 220px;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 1rem;
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    font-weight: 600;
-    transition: transform 0.3s ease;
-}
-
-    .carousel-item i {
-        font-size: 1.8rem;
-        color: #454d66;
-        margin-bottom: 0.5rem;
-        display: block;
-    }
-
-    .carousel-item:hover {
-        transform: scale(1.05);
-    }
-
-@keyframes scrollLoop {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-
 /*about me*/
 .clean-about {
     background-color: #ffffff;
@@ -872,7 +821,7 @@ footer {
 ============================================================= */
 .coding-projects {
     padding: 2rem 1rem;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 .section-wrapper {
@@ -1051,150 +1000,6 @@ footer {
 
 
 
-/* =============================================================
-   PORTFOLIO SECTION
-============================================================= */
-/*.coding-projects {
-    padding: 2rem 1rem;
-    background-color: #f9f9f9;
-}
-
-.section-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #7f8c8d;
-    margin-bottom: 2rem;
-}
-
-.project-list {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 1rem;
-}
-
-.project-card {
-    flex: 0 0 auto;
-    min-width: 320px;
-    max-width: 350px;
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    scroll-snap-align: start;
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: scale(1.03);
-}
-
-.project-image {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.project-image:hover img {
-    transform: scale(1.05);
-}
-
-.project-details {
-    padding: 1.5rem;
-}
-
-.project-details h3 {
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
-}
-
-.tech-used {
-    margin-bottom: 1rem;
-}
-
-.tech {
-    display: inline-block;
-    background: #eef2f3;
-    color: #00796b;
-    padding: 0.3rem 0.7rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    margin-right: 0.4rem;
-    margin-bottom: 0.3rem;
-}
-
-.project-desc {
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 1.2rem;
-    font-size: 0.95rem;
-}
-
-.project-actions {
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-}
-
-.btn,
-.btn-code,
-.btn-demo {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.btn-code {
-    color: white;
-    background: #2c3e50;
-    border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.btn-code:hover {
-    background: #1a252f;
-    transform: translateY(-2px);
-}
-
-.btn-demo {
-    background: #f4f4f4;
-    color: #2c2c2c;
-    border: 1px solid #ccc;
-}
-
-.btn-demo:hover {
-    background: #eaeaea;
-    transform: translateY(-2px);
-}*/
-
-
-/*portfolio end*/
 
 
 /*REFERENCE SECITON---*/
@@ -1264,7 +1069,7 @@ footer {
 /* Kontakt */
 .contact-section {
     padding: 4rem 1.5rem;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
     .contact-section .about-wrapper {
@@ -1351,3 +1156,7 @@ footer {
     color: black;
     white-space: nowrap;
 }
+
+
+/*skills*/
+

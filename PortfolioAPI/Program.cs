@@ -11,12 +11,11 @@ namespace PortfolioAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Lägg till controllers
             builder.Services.AddControllers();
 
-            // Lägg till Swagger (OpenAPI)
+
             builder.Services.AddEndpointsApiExplorer();
-            //builder.Services.AddSwaggerGen();
+
 
             builder.Services.AddSwaggerGen(c =>
             {
@@ -24,17 +23,16 @@ namespace PortfolioAPI
                 {
                     Title = "Portfolio API",
                     Version = "v1",
-                    Description = "API för Nylegna Kir Sosobrados utvecklarportfölj"
+                    Description = "API for portfolio project"
                 });
             });
 
-            // Lägg till databas
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
-            // Migrera och seeda databas
             using (var scope = app.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
@@ -42,7 +40,7 @@ namespace PortfolioAPI
                 SeedData.Initialize(db);
             }
 
-            // 🟢 Aktivera Swagger alltid (även i produktion – för test/demo)
+
             app.UseSwagger();
             app.UseSwaggerUI();
 
