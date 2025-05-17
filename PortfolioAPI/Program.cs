@@ -1,4 +1,5 @@
-using Microsoft.EntityFrameworkCore;
+Ôªøusing Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models; 
 using DAL.Models;
 using DAL.Data;
 
@@ -10,15 +11,24 @@ namespace PortfolioAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // L‰gg till controllers
+            // L√§gg till controllers
             builder.Services.AddControllers();
 
-            // L‰gg till Swagger (OpenAPI)
+            // L√§gg till Swagger (OpenAPI)
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            //builder.Services.AddSwaggerGen();
 
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Portfolio API",
+                    Version = "v1",
+                    Description = "API f√∂r Nylegna Kir Sosobrados utvecklarportf√∂lj"
+                });
+            });
 
-            // L‰gg till databas
+            // L√§gg till databas
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -32,18 +42,22 @@ namespace PortfolioAPI
                 SeedData.Initialize(db);
             }
 
-            // Aktivera Swagger i utvecklingsl‰ge
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI(); // <- Det h‰r gˆr sÂ du fÂr en snygg Swagger-sida i webbl‰saren
-            }
+            // üü¢ Aktivera Swagger alltid (√§ven i produktion ‚Äì f√∂r test/demo)
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
             app.MapControllers();
+
+            app.MapGet("/", context =>
+            {
+                context.Response.Redirect("/swagger");
+                return Task.CompletedTask;
+            });
+
 
             app.Run();
         }

@@ -1,40 +1,37 @@
 ﻿@page
-@model IndexModel
+@model Portfolio.Pages.IndexModel
 @{
     ViewData["Title"] = "Start";
     Layout = "_Layout";
 }
 
-@* hero *@
+<!-- Hero Section -->
 <section id="hero">
     @await Html.PartialAsync("Partials/_HeroPartial")
 </section>
 
-@* skill section *@
-@* <section id="skills"> *@
-@*     @await Html.PartialAsync("Partials/_SkillsPartial") *@
-@* </section> *@
-
-@* about me section *@
+<!-- About Me Section -->
 <section id="about-me">
-    @await Html.PartialAsync("Partials/_AboutPartial", Model.Projects)
+    @if (Model.Projects != null)
+    {
+        @await Html.PartialAsync("Partials/_AboutPartial", Model.Projects)
+    }
 </section>
 
-
-@* Projects Portfolio Display (WITH API+ SQL) *@
+<!-- Projects Portfolio Section -->
 <section id="portfolio-api">
-    @await Html.PartialAsync("Partials/_ProjectListPartial", Model.Projects)
+    @if (Model.Projects != null)
+    {
+        @await Html.PartialAsync("Partials/_ProjectListPartial", Model.Projects)
+    }
 </section>
 
-
- @* Contact FORM SECTION------------* *@
+<!-- Contact Form Section -->
 <section id="kontakt">
     @await Html.PartialAsync("Partials/_ContactPartial", new Portfolio.Models.ContactFormViewModel())
 </section>
 
-
-
-
+<!-- Animation on scroll -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>

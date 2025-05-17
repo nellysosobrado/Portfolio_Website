@@ -21,18 +21,31 @@ namespace Portfolio
 
             var app = builder.Build();
 
-            // 🟡 Lägg till databasinitiering + seeding
             using (var scope = app.Services.CreateScope())
             {
-                var services = scope.ServiceProvider;
-                var context = services.GetRequiredService<ApplicationDbContext>();
-
-                // Skapa databasen om den inte finns (utan migrations)
-                context.Database.EnsureCreated();
-
-                // Kör seeding
-                SeedData.Initialize(context);
+                var dbContext = scope.ServiceProvider.
+                     GetRequiredService<ApplicationDbContext>();
+                if (dbContext.Database.IsRelational())
+                {
+                    dbContext.Database.Migrate();
+                    dbContext.Database.EnsureCreated();
+                    SeedData.Initialize(dbContext);
+                }
             }
+
+
+            // 🟡 Lägg till databasinitiering + seeding
+            //using (var scope = app.Services.CreateScope())
+            //{
+            //    var services = scope.ServiceProvider;
+            //    var context = services.GetRequiredService<ApplicationDbContext>();
+
+            //    // Skapa databasen om den inte finns (utan migrations)
+            //    context.Database.EnsureCreated();
+
+            //    // Kör seeding
+            //    SeedData.Initialize(context);
+            //}
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
