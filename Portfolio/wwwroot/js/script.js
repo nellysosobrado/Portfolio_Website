@@ -34,3 +34,14 @@ function copyEmail() {
     alert('copied "nelly.sosobrado@gmail.com" to clipboard!');
 } 
 
+
+
+
+    function copyEmailToClipboard() {
+            const email = "nelly.sosobrado@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+        alert("Email address copied to clipboard!");
+            }).catch(err => {
+        console.error("Could not copy text: ", err);
+            });
+        }
