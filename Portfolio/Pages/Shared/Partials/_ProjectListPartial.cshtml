@@ -3,7 +3,7 @@
         <h2 class="section-title">Portfolio</h2>
         <p class="section-subtitle">Here are some of my school and personal projects built with .NET and C#.</p>
 
-        <div class="project-list">
+        <div class="project-list collapsed">
             @foreach (var project in Model)
             {
                 <div class="project-card">
@@ -37,6 +37,9 @@
                 </div>
             }
         </div>
+
+        <div style="text-align:center; margin-top: 1rem;">
+            <button id="toggle-projects" class="cta-button soft">Visa fler projekt</button>
+        </div>
     </div>
 </section>
-
