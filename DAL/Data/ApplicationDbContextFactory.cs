@@ -15,7 +15,7 @@ namespace DAL.Data
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
             // ✅ Byt ut detta till din riktiga databasanslutning
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=PortfolioDb;Trusted_Connection=True;MultipleActiveResultSets=true";
+            var connectionString = "Server=localhost;Database=PortfolioDb;Trusted_Connection=True;TrustServerCertificate=true;MultipleActiveResultSets=true";
 
             optionsBuilder.UseSqlServer(connectionString);
 

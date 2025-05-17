@@ -1,4 +1,4 @@
-using DAL.Data;
+﻿using DAL.Data;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Services;
 
@@ -12,27 +12,37 @@ namespace Portfolio
 
             // Add services to the container.
             builder.Services.AddRazorPages();
-
             builder.Services.AddHttpClient();
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddHttpClient<WeatherService>();
 
+            // Lägg till databaskoppling
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
+
+            // 🟡 Lägg till databasinitiering + seeding
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var context = services.GetRequiredService<ApplicationDbContext>();
+
+                // Skapa databasen om den inte finns (utan migrations)
+                context.Database.EnsureCreated();
+
+                // Kör seeding
+                SeedData.Initialize(context);
+            }
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.MapStaticAssets();
