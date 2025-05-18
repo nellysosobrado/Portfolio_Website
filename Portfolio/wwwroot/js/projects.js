@@ -42,3 +42,5 @@ document.addEventListener("DOMContentLoaded", () => {
             container.innerHTML = `<p class="text-red-600">Cannot display any projects at the moment.</p>`;
         });
 });
+
+
