@@ -1,18 +1,24 @@
-﻿using Portfolio.Models;
-using System.Net.Http;
+﻿using Microsoft.Extensions.Options;
+using Services.Interfaces;
+using Shared.External;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http.Json;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace Portfolio.Services
+namespace Services.Services
 {
-    public class WeatherService
+    public class WeatherService : IWeatherService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey = "d5806618a6f63df567aa2a329f966f43"; 
+        private readonly string _apiKey;
 
-        public WeatherService(HttpClient httpClient)
+        public WeatherService(HttpClient httpClient, IOptions<OpenWeatherOptions> options)
         {
             _httpClient = httpClient;
+            _apiKey = options.Value.ApiKey;
         }
 
         public async Task<WeatherInfo?> GetWeatherAsync(string city = "Stockholm")

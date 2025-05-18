@@ -1,6 +1,8 @@
 ﻿using DAL.Data;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Services;
+using Services.Interfaces;
+using Services.Services;
 
 namespace Portfolio
 {
@@ -13,7 +15,10 @@ namespace Portfolio
             // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddHttpClient();
-            builder.Services.AddHttpClient<WeatherService>();
+            builder.Services.Configure<OpenWeatherOptions>(
+    builder.Configuration.GetSection("OpenWeather"));
+
+            builder.Services.AddHttpClient<IWeatherService, WeatherService>();
 
             // Lägg till databaskoppling
             builder.Services.AddDbContext<ApplicationDbContext>(options =>

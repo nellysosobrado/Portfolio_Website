@@ -1,10 +1,4 @@
-﻿@using Portfolio.Services
-@inject WeatherService WeatherService
-
-@{
-    var weather = await WeatherService.GetWeatherAsync();
-}
-
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,11 +28,9 @@
                     </a>
                 </li>
                 <li class="nav-link weather-info">
-                    @if (weather != null)
-                    {
-                        <span>@weather.Main.Temp&nbsp;°C – @weather.Name</span>
-                    }
+                    @await Component.InvokeAsync("Weather")
                 </li>
+
             </ul>
         </div>
     </nav>
