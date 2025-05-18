@@ -39,6 +39,7 @@ namespace PortfolioAPI
                     .AllowAnyMethod();
                 });
             });
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
