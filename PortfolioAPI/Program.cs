@@ -2,6 +2,9 @@
 using Microsoft.OpenApi.Models;
 using DAL.Models;
 using DAL.Data;
+using Services.Interfaces;
+using Services.Services;
+using DAL.Repositories;
 
 namespace PortfolioAPI
 {
@@ -23,7 +26,13 @@ namespace PortfolioAPI
                 });
             });
             builder.Services.AddControllers()
-    .AddNewtonsoftJson(); 
+    .AddNewtonsoftJson();
+
+
+            builder.Services.AddScoped<IProjectService, ProjectService>();
+            builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+            builder.Services.AddScoped<IProjectService, ProjectService>();
+            builder.Services.AddAutoMapper(typeof(Program));
 
 
 

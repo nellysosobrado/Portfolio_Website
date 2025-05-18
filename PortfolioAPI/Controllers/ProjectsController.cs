@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using DAL.Data;
+using Services.Interfaces;
 using DAL.Models;
 using PortfolioAPI.DTOs;
+using Services.Interfaces;
 
 namespace PortfolioAPI.Controllers;
 
@@ -12,19 +12,19 @@ namespace PortfolioAPI.Controllers;
 [Route("api/[controller]")]
 public class ProjectsController : ControllerBase
 {
-    private readonly ApplicationDbContext _context;
+    private readonly IProjectService _projectService;
     private readonly IMapper _mapper;
 
-    public ProjectsController(ApplicationDbContext context, IMapper mapper)
+    public ProjectsController(IProjectService projectService, IMapper mapper)
     {
-        _context = context;
+        _projectService = projectService;
         _mapper = mapper;
     }
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<ProjectDto>>> GetProjects()
     {
-        var projects = await _context.Projects.ToListAsync();
+        var projects = await _projectService.GetAllProjectsAsync();
         var result = _mapper.Map<List<ProjectDto>>(projects);
         return Ok(result);
     }
@@ -32,7 +32,7 @@ public class ProjectsController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<ProjectDto>> GetProject(int id)
     {
-        var project = await _context.Projects.FindAsync(id);
+        var project = await _projectService.GetProjectByIdAsync(id);
         if (project == null)
             return NotFound();
 
@@ -46,8 +46,7 @@ public class ProjectsController : ControllerBase
         var project = _mapper.Map<Project>(dto);
         project.CreatedDate = DateTime.UtcNow;
 
-        _context.Projects.Add(project);
-        await _context.SaveChangesAsync();
+        await _projectService.CreateProjectAsync(project);
 
         var result = _mapper.Map<ProjectDto>(project);
         return CreatedAtAction(nameof(GetProject), new { id = result.Id }, result);
@@ -56,12 +55,12 @@ public class ProjectsController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateProject(int id, [FromBody] CreateProjectDto dto)
     {
-        var project = await _context.Projects.FindAsync(id);
-        if (project == null)
+        var existing = await _projectService.GetProjectByIdAsync(id);
+        if (existing == null)
             return NotFound();
 
-        _mapper.Map(dto, project);
-        await _context.SaveChangesAsync();
+        _mapper.Map(dto, existing);
+        await _projectService.UpdateProjectAsync(existing);
 
         return NoContent();
     }
@@ -72,7 +71,7 @@ public class ProjectsController : ControllerBase
         if (patchDoc == null)
             return BadRequest();
 
-        var project = await _context.Projects.FindAsync(id);
+        var project = await _projectService.GetProjectByIdAsync(id);
         if (project == null)
             return NotFound();
 
@@ -83,7 +82,7 @@ public class ProjectsController : ControllerBase
             return BadRequest(ModelState);
 
         _mapper.Map(dto, project);
-        await _context.SaveChangesAsync();
+        await _projectService.UpdateProjectAsync(project);
 
         return NoContent();
     }
@@ -91,12 +90,11 @@ public class ProjectsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteProject(int id)
     {
-        var project = await _context.Projects.FindAsync(id);
+        var project = await _projectService.GetProjectByIdAsync(id);
         if (project == null)
             return NotFound();
 
-        _context.Projects.Remove(project);
-        await _context.SaveChangesAsync();
+        await _projectService.DeleteProjectAsync(id);
 
         return NoContent();
     }

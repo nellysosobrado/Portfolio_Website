@@ -19,6 +19,11 @@ namespace Portfolio
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            builder.Services.AddHttpClient<IProjectDataService, ProjectDataService>(client =>
+            {
+                client.BaseAddress = new Uri("https://portfolioapi20250517155004-a3abhtfaecf6ekdh.swedencentral-01.azurewebsites.net");
+            });
+
             var app = builder.Build();
 
             using (var scope = app.Services.CreateScope())
@@ -33,6 +38,7 @@ namespace Portfolio
                 }
             }
 
+            
 
             // 🟡 Lägg till databasinitiering + seeding
             //using (var scope = app.Services.CreateScope())
