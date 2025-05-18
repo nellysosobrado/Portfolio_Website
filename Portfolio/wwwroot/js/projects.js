@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const isLocalhost = window.location.hostname === "localhost";
     const apiBaseUrl = isLocalhost
-        ? "https://localhost:5001"
+        ? "https://localhost:7253" 
         : "https://portfolioapi20250517155004-a3abhtfaecf6ekdh.swedencentral-01.azurewebsites.net";
+
 
     fetch(`${apiBaseUrl}/api/projects`)
         .then(response => {
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="tech-used">
                             ${project.techStack.split(',').map(t => `<span class="tech">${t.trim()}</span>`).join('')}
                         </div>
-                        <p class="project-desc">${project.description}</p>
+                        <p class="project-desc">${project.description}</p   
                         <div class="project-actions">
                             ${project.githubUrl ? `<a href="${project.githubUrl}" class="btn-code" target="_blank"><i class="fab fa-github"></i> View Code</a>` : ""}
                             ${project.liveDemoUrl ? `<a href="${project.liveDemoUrl}" class="btn btn-demo" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ""}
