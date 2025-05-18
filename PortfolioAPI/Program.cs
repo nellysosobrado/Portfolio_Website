@@ -22,6 +22,9 @@ namespace PortfolioAPI
                     Description = "API for portfolio project"
                 });
             });
+            builder.Services.AddControllers()
+    .AddNewtonsoftJson(); 
+
 
 
             builder.Services.AddCors(options =>

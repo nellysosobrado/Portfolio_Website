@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using DAL.Data;
 using DAL.Models;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace PortfolioAPI.Controllers;
 
@@ -14,6 +15,35 @@ public class ProjectsController : ControllerBase
     public ProjectsController(ApplicationDbContext context)
     {
         _context = context;
+    }
+
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> PatchProject(int id, [FromBody] JsonPatchDocument<Project> patchDoc)
+    {
+        if (patchDoc == null)
+            return BadRequest();
+
+        var project = await _context.Projects.FindAsync(id);
+        if (project == null)
+            return NotFound();
+
+        patchDoc.ApplyTo(project, ModelState);
+
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        try
+        {
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!_context.Projects.Any(p => p.Id == id))
+                return NotFound();
+            throw;
+        }
+
+        return NoContent();
     }
 
 
