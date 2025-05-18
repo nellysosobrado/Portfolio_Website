@@ -30,3 +30,21 @@ The portfolio includes:
 - Responsive design and layout using **Bootstrap**  
 - Smooth scroll-based animations implemented with **AOS (Animate On Scroll)** for enhanced user experience
 
+  ## Key Features
+
+- Dynamic project section (fetched from API)  
+- Contact form with validation  
+- Downloadable resume  
+- Real-time weather widget  
+- Mobile-friendly design  
+- Swagger UI for API testing  
+- HTTP PATCH support for partial updates in the API
+
+## NuGet Packages
+
+- `Microsoft.EntityFrameworkCore`  
+- `Microsoft.EntityFrameworkCore.SqlServer`  
+- `Swashbuckle.AspNetCore`  
+- `Microsoft.AspNetCore.JsonPatch`  
+- `Microsoft.Extensions.Configuration`, `Logging`, `DependencyInjection`
+
