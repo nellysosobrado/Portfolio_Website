@@ -8,7 +8,7 @@ namespace Portfolio.Services
     public class WeatherService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey = "d5806618a6f63df567aa2a329f966f43"; //API KEY to weather API
+        private readonly string _apiKey = "d5806618a6f63df567aa2a329f966f43"; 
 
         public WeatherService(HttpClient httpClient)
         {

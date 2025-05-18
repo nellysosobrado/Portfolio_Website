@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models; 
+using Microsoft.OpenApi.Models;
 using DAL.Models;
 using DAL.Data;
 
@@ -12,11 +12,7 @@ namespace PortfolioAPI
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
-
-
             builder.Services.AddEndpointsApiExplorer();
-
-
             builder.Services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -24,6 +20,20 @@ namespace PortfolioAPI
                     Title = "Portfolio API",
                     Version = "v1",
                     Description = "API for portfolio project"
+                });
+            });
+
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy =>
+                {
+                    policy.WithOrigins(
+                        "https://localhost:7087", 
+                        "https://portfolionylegna-duhegge3eph2eve9.swedencentral-01.azurewebsites.net" 
+                    )
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
                 });
             });
 
@@ -40,12 +50,11 @@ namespace PortfolioAPI
                 SeedData.Initialize(db);
             }
 
-
             app.UseSwagger();
             app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
-
+            app.UseCors(); 
             app.UseAuthorization();
 
             app.MapControllers();
@@ -55,7 +64,6 @@ namespace PortfolioAPI
                 context.Response.Redirect("/swagger");
                 return Task.CompletedTask;
             });
-
 
             app.Run();
         }

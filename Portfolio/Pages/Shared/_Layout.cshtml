@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-
-
-
 </head>
 <body id="top">
     <nav>
@@ -28,9 +24,7 @@
             </div>
 
             <ul class="nav-links">
-                @* <li><a href="#about-me" class="nav-link">About Me</a></li> *@
                 <li><a href="#portfolio-api" class="nav-link">Portfolio</a></li>
-                @* <li><a href="#kontakt" class="nav-link">Contact Me!</a></li> *@
                 <li><a href="~/images/CV_NylegnaKir_Sosobrado.pdf" download class="nav-link">Download my CV</a></li>
                 <li><a href="https://github.com/nellysosobrado" target="_blank"><i class="bi bi-github"></i></a></li>
                 <li><a href="https://linkedin.com/in/nylegnakir" target="_blank"><i class="bi bi-linkedin"></i></a></li>
@@ -39,15 +33,12 @@
                         <i class="bi bi-envelope"></i>
                     </a>
                 </li>
-
                 <li class="nav-link weather-info">
                     @if (weather != null)
                     {
                         <span>@weather.Main.Temp&nbsp;°C – @weather.Name</span>
                     }
                 </li>
-
-
             </ul>
         </div>
     </nav>
@@ -65,20 +56,22 @@
                 <a href="javascript:void(0)" onclick="copyEmailToClipboard()" title="Click to copy email" aria-label="Copy email to clipboard">
                     <i class="bi bi-envelope"></i>
                 </a>
-
             </div>
         </div>
     </footer>
 
-
     <script src="~/js/script.js"></script>
+    <script src="~/js/projects.js"></script>
+
     <script>
-        document.getElementById("toggle-projects").addEventListener("click", function () {
+        document.getElementById("toggle-projects")?.addEventListener("click", function () {
             const list = document.querySelector(".project-list");
             list.classList.toggle("collapsed");
             this.textContent = list.classList.contains("collapsed") ? "Show more" : "Show less";
         });
     </script>
 
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
