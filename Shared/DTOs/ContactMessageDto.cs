@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Portfolio.Models
+namespace Shared.Models
 {
-    public class ContactMessage
+    public class ContactMessageDto
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;

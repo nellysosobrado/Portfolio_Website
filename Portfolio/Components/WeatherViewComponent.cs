@@ -18,7 +18,7 @@ namespace Portfolio.Components
         public async Task<IViewComponentResult> InvokeAsync()
         {
             WeatherInfo? weather = await _weatherService.GetWeatherAsync();
-            return View(weather); // skickas till Default.cshtml
+            return View(weather); 
         }
     }
 }
