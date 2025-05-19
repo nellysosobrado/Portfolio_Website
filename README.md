@@ -18,6 +18,7 @@ To ensure secure and flexible configuration, I use the appsettings.json system i
   https://portfolioapi20250517155004-a3abhtfaecf6ekdh.swedencentral-01.azurewebsites.net/swagger/index.html
 
 
+
 ## Solution Structure
 
 The solution includes the following projects:
@@ -29,6 +30,8 @@ The solution includes the following projects:
 | `Services`              | Business logic and external API integration               |
 | `DAL` (Data Access)     | Database access using Entity Framework Core               |
 | `Shared`                | Shared models (DTOs, mapping profiles)                    |
+
+![PortfolioFlowChart](https://github.com/user-attachments/assets/36fa3265-878e-4bae-b9f8-0ebee27aff99)
 
   ## Key Features
 
