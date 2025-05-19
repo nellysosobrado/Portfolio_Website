@@ -36,8 +36,8 @@ namespace DAL.Data
                         TechStack = "C#, ASP.NET Core 9.0, Razor Pages, Entity Framework Core, REST API, Bootstrap 5, JavaScript, Swiper.js, Azure App Service",
                         Description = "A developer portfolio site built with Razor Pages. Displays previous projects by consuming a custom-built .NET REST API. Includes sections such as About Me, Skills, Projects, References, and Contact. Hosted on Azure.",
                         CreatedDate = new DateTime(2025, 5, 15),
-                        GithubUrl = "",
-                        LiveDemoUrl = "t",
+                        GithubUrl = "https://github.com/nellysosobrado/Portfolio2025",
+                        LiveDemoUrl = "https://portfolionylegna-duhegge3eph2eve9.swedencentral-01.azurewebsites.net/",
                         ImageUrl = "/images/Portfolio.png"
                     },
                     new Project
