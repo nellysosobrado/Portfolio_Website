@@ -14,7 +14,7 @@ In addition to backend and cloud integration, this project also highlights my ab
 - Portfolio (Frontend):  
   https://portfolionylegna-duhegge3eph2eve9.swedencentral-01.azurewebsites.net/
 
-- API (Swagger UI):  
+- PortfolioAPI (Swagger UI):  
   https://portfolioapi20250517155004-a3abhtfaecf6ekdh.swedencentral-01.azurewebsites.net/swagger/index.html
 
 
