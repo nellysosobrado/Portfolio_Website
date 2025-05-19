@@ -37,9 +37,9 @@ The solution includes the following projects:
 - “Load more” functionality for dynamic project loading
 
 ###  Custom REST API  
-- Full CRUD support (Create, Read, Update, Delete)  
+- Full CRUD support (Create, Read, Update, Delete, Patch)  
 - Supports partial updates using `PATCH` (JSON Patch)  
-- API is documented and testable via Swagger (OpenAPI)
+- API via Swagger (OpenAPI)
 
 ###  Cloud-based database  
 - SQL Server hosted in Microsoft Azure  
