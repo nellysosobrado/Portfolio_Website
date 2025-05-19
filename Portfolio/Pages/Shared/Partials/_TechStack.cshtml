@@ -1,0 +1,36 @@
+﻿<section id="techstack" class="techstack-carousel-wrapper">
+    @* <h2 class="techstack-title"></h2> *@
+    <div class="techstack-carousel-container">
+        <div class="techstack-carousel" id="techstackCarousel">
+            @foreach (var (icon, name) in new[] {
+            ("bi-code-slash", "Code"), ("bi-diagram-3", "APIs"), ("bi-database", "SQL"),
+            ("bi-file-code", "C#"), ("bi-laptop", "React"), ("bi-code", "HTML"),
+            ("bi-palette", "CSS"), ("bi-braces", "JS"), ("bi-window-sidebar", "Razor"),
+            ("bi-server", "SQL Server"), ("bi-github", "GitHub"), ("bi-cloud", "Azure"),
+            ("bi-globe2", "Swagger"), ("bi-lightning-charge", "Vite"),
+            ("bi-terminal", "Bash"), ("bi-code-square", "VS Code"), ("bi-window", "VS")
+            })
+            {
+                <div class="carousel-item">
+                    <i class="bi @icon"></i>
+                    <span>@name</span>
+                </div>
+            }
+            @* Duplicera en gång för loop-effekt *@
+            @foreach (var (icon, name) in new[] {
+            ("bi-code-slash", "Code"), ("bi-diagram-3", "APIs"), ("bi-database", "SQL"),
+            ("bi-file-code", "C#"), ("bi-laptop", "React"), ("bi-code", "HTML"),
+            ("bi-palette", "CSS"), ("bi-braces", "JS"), ("bi-window-sidebar", "Razor"),
+            ("bi-server", "SQL Server"), ("bi-github", "GitHub"), ("bi-cloud", "Azure"),
+            ("bi-globe2", "Swagger"), ("bi-lightning-charge", "Vite"),
+            ("bi-terminal", "Bash"), ("bi-code-square", "VS Code"), ("bi-window", "VS")
+            })
+            {
+                <div class="carousel-item">
+                    <i class="bi @icon"></i>
+                    <span>@name</span>
+                </div>
+            }
+        </div>
+    </div>
+</section>

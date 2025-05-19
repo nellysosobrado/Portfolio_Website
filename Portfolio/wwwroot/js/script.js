@@ -46,4 +46,14 @@ function copyEmail() {
             });
         }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.getElementById("techstackCarousel");
 
+    carousel.addEventListener("mouseenter", () => {
+        carousel.style.animationPlayState = "paused";
+    });
+
+    carousel.addEventListener("mouseleave", () => {
+        carousel.style.animationPlayState = "running";
+    });
+});

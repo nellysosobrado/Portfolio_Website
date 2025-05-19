@@ -87,30 +87,6 @@ nav {
 }
 
 
-/*.hero {
-    position: relative;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-top: 0;
-    padding: 2rem 2rem 4rem 2rem;
-    text-align: center;
-    color: #111;
-    background: linear-gradient(to bottom, rgba(200, 200, 200, 1), rgba(240, 240, 240, 0));
-    z-index: 1;
-    overflow: hidden;*/
-    /* Fade-in animation */
-    /*opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInHero 1.2s ease-out forwards;
-}
-
-@keyframes fadeInHero {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}*/
-
 
 
 .hero-content {
@@ -284,14 +260,26 @@ section {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #ccc; /* neutral grå */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* mjuk skugga */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* tydligare skugga */
     transition: transform 0.3s ease, border-color 0.3s ease;
+    /* Animation när bilden laddas in */
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 0.8s ease forwards;
 }
 
     .profile-image:hover {
         transform: scale(1.05);
         border-color: #999; /* mörkare grå vid hover */
     }
+
+/* Nyckelbildruta för fade/scale-in */
+@keyframes fadeInScale {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 
 /* Om mig sektion */
@@ -1209,3 +1197,58 @@ section {
     #scrollToTopBtn:hover {
         background: rgba(30, 30, 30, 0.95);
     }
+
+
+.techstack-carousel-wrapper {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.techstack-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #222;
+}
+
+.techstack-carousel-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.techstack-carousel {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scrollCarousel 30s linear infinite;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1rem;
+    width: 100px;
+    color: #333;
+}
+
+    .carousel-item i {
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
+    }
+
+/* Infinite loop scroll */
+@keyframes scrollCarousel {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
