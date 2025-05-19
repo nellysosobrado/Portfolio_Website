@@ -1,50 +1,149 @@
-# Portfolio website 
+# Nylegna Kir Sosobrado - .NET Fullstack Developer Portfolio
 
-This is my personal developer portfolio, created to showcase my technical skills, background, and previous projects. The solution consists of three main projects:
+This solution demonstrates my skills as a fullstack .NET developer. It includes a responsive web frontend built with ASP.NET Razor Pages, a REST API for managing portfolio projects, and a clean architecture with clearly separated responsibilities.
 
-- **Portfolio** – A responsive web application built with ASP.NET Razor Pages. It includes a real-time weather integration using the OpenWeatherMap API, demonstrating the use of external APIs in a modern web environment.
+The REST API (`PortfolioAPI`) is connected to a SQL Server database hosted in Microsoft Azure.  
+All project data is stored in the cloud and accessed using Entity Framework Core (Code First).
 
-- **PortfolioAPI** – A .NET 8 REST API built with ASP.NET Core Web API. It delivers structured project data (name, tech stack, description, creation date, etc.). The API uses Entity Framework Core (Code First) to store data in a SQL Server database. It is deployed to Azure and consumed by the Portfolio frontend.
+In addition to backend and cloud integration, this project also highlights my ability to design user-friendly and accessible web interfaces using modern UX/UI principles.
 
-- **DAL (Data Access Layer)** – A class library that handles database access logic using Entity Framework Core. This promotes clean architecture, separation of concerns, and maintainability.
+
 
 ## Live Demo
 
-- Portfolio: https://portfolionylegna-duhegge3eph2eve9.swedencentral-01.azurewebsites.net/
-- API (SWAGGER): https://portfolioapi20250517155004-a3abhtfaecf6ekdh.swedencentral-01.azurewebsites.net/swagger/index.html
+- Portfolio (Frontend):  
+  https://portfolionylegna-duhegge3eph2eve9.swedencentral-01.azurewebsites.net/
 
-## Project Features
+- PortfolioAPI (Swagger UI):  
+  https://portfolioapi20250517155004-a3abhtfaecf6ekdh.swedencentral-01.azurewebsites.net/swagger/index.html
 
-The portfolio includes:
 
-- Hero section with portrait and personal introduction  
-- "About Me" section  
-- "Skills" section listing technical competencies  
-- "Portfolio" section displaying projects dynamically from the API  
-- "References" section presenting professional and academic references  
-- Contact form with validation  
-- Downloadable CV button  
-- Links to GitHub and social media  
-- Weather component showing current conditions using OpenWeatherMap  
-- Footer with contact details  
-- Responsive design and layout using **Bootstrap**  
-- Smooth scroll-based animations implemented with **AOS (Animate On Scroll)** for enhanced user experience
+## Solution Structure
+
+The solution includes the following projects:
+
+| Project                 | Description                                               |
+|-------------------------|-----------------------------------------------------------|
+| `Portfolio`             | Frontend using ASP.NET Razor Pages                        |
+| `PortfolioAPI`          | REST API that provides project data                       |
+| `Services`              | Business logic and external API integration               |
+| `DAL` (Data Access)     | Database access using Entity Framework Core               |
+| `Shared`                | Shared models (DTOs, mapping profiles)                    |
 
   ## Key Features
 
-- Dynamic project section (fetched from API)  
-- Contact form with validation  
-- Downloadable resume  
-- Real-time weather widget  
-- Mobile-friendly design  
-- Swagger UI for API testing  
-- HTTP PATCH support for partial updates in the API
+- **Modern and responsive design**
+  - Razor Pages frontend with accessible layout
+  - "Load more" project functionality with pagination
 
-## NuGet Packages
+- **Backend powered by a custom REST API**
+  - Full CRUD functionality (Create, Read, Update, Delete)
+  - Supports partial updates via JSON Patch (`PATCH`)
+  - Projects are fetched from an internal API (`PortfolioAPI`)
+  - Swagger 
 
-- `Microsoft.EntityFrameworkCore`  
-- `Microsoft.EntityFrameworkCore.SqlServer`  
-- `Swashbuckle.AspNetCore`  
-- `Microsoft.AspNetCore.JsonPatch`  
-- `Microsoft.Extensions.Configuration`, `Logging`, `DependencyInjection`
+
+- **Cloud database integration**
+  - Uses Microsoft Azure SQL Database
+  - Entity Framework Core (Code First)
+
+- **Weather API integration**
+  - Live weather displayed in the navigation bar (OpenWeather API)
+
+- **Clean and modular architecture**
+  - Separation of concerns between UI, services, API, and data
+  - Shared project for DTOs and reusable data models
+
+- **Object-Oriented Programming (OOP)**
+  - Interface-based services and abstraction layers
+  - Encapsulated logic using services and repositories
+
+- **DRY Principle**
+  - Shared services, models, and components to avoid repetition
+
+- **AutoMapper**
+  - Maps between entities and DTOs automatically
+
+- **Reusable UI with Razor View Components**
+  - Weather and project display are modular and maintainable
+ 
+## 🛡️ Form Validation
+
+The contact form on the homepage uses **Data Annotations** (e.g. `[Required]`, `[EmailAddress]`) to define validation rules directly in the model. These rules are enforced through **server-side validation** using `ModelState.IsValid` in the Razor Page’s `OnPostAsync` method.
+
+This ensures:
+
+- Valid input before processing  
+- Data integrity and security  
+- A better user experience  
+## Languages & Tools
+
+- **Languages:**  
+  C#, HTML, CSS, JavaScript, JSON
+
+- **Frameworks & Platforms:**  
+  ASP.NET Core, Razor Pages, .NET 9, Entity Framework Core
+
+- **Databases & Cloud:**  
+  Microsoft SQL Server (Azure), Azure App Service
+
+- **APIs:**  
+  Custom REST API (`PortfolioAPI`), OpenWeather API
+
+- **Development Tools:**  
+  Visual Studio 2022, Git, GitHub
+
+- **Documentation & Testing:**  
+  Swagger (OpenAPI)
+
+
+## Languages & Tools
+
+- **Languages:**  
+  C#, HTML, CSS, JavaScript, JSON
+
+- **Frameworks & Platforms:**  
+  ASP.NET Core, Razor Pages, .NET 9, Entity Framework Core
+
+- **Databases & Cloud:**  
+  Microsoft SQL Server (Azure), Azure App Service, SQL Server Management Studio (SSMS)
+
+- **APIs:**  
+  Custom REST API (`PortfolioAPI`), OpenWeather API
+
+- **Development Tools:**  
+  Visual Studio 2022, Git, GitHub
+
+- **Documentation & Testing:**  
+  Swagger (OpenAPI)
+
+
+## NuGet Packages Used
+
+### Portfolio (Frontend)
+- `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation`
+- `Microsoft.Extensions.Http`
+- `Microsoft.Extensions.Options.ConfigurationExtensions`
+
+### PortfolioAPI
+- `Microsoft.EntityFrameworkCore`
+- `Microsoft.EntityFrameworkCore.SqlServer`
+- `Microsoft.EntityFrameworkCore.Tools`
+- `AutoMapper.Extensions.Microsoft.DependencyInjection`
+- `Swashbuckle.AspNetCore`
+- `Microsoft.AspNetCore.JsonPatch`
+
+### Portfolio.Services
+- `Microsoft.Extensions.Http`
+- `Microsoft.Extensions.Options`
+- `System.Net.Http.Json`
+- `AutoMapper`
+
+### DAL
+- `Microsoft.EntityFrameworkCore`
+- `Microsoft.EntityFrameworkCore.Design`
+
+### Shared
+- No external packages
+
 
