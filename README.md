@@ -66,7 +66,16 @@ The solution includes the following projects:
 
 - **Reusable UI with Razor View Components**
   - Weather and project display are modular and maintainable
+ 
+## 🛡️ Form Validation
 
+The contact form on the homepage uses **Data Annotations** (e.g. `[Required]`, `[EmailAddress]`) to define validation rules directly in the model. These rules are enforced through **server-side validation** using `ModelState.IsValid` in the Razor Page’s `OnPostAsync` method.
+
+This ensures:
+
+- Valid input before processing  
+- Data integrity and security  
+- A better user experience  
 ## Languages & Tools
 
 - **Languages:**  
