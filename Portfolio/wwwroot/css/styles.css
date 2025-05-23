@@ -14,7 +14,6 @@ body {
     background-color: #ffffff;
 }
 
-/* Navigation */
 nav {
     position: fixed;
     width: 100%;
@@ -74,7 +73,7 @@ nav {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
-/* Hero Section */
+
 .hero {
     height: 100vh;
     display: flex;
@@ -160,7 +159,7 @@ nav {
 
 
 
-/* Sections */
+
 section {
     padding: 5rem 2rem;
     background-color: #ffffff;
@@ -187,7 +186,7 @@ section {
             margin: 1rem auto;
         }
 
-/* Projects */
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -214,7 +213,7 @@ section {
     margin-top: 1rem;
 }
 
-/* Contact Form */
+
 .contact-content {
     max-width: 800px;
     margin: 0 auto;
@@ -285,10 +284,10 @@ section {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ccc; /* neutral grå */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* tydligare skugga */
+    border: 4px solid #ccc; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, border-color 0.3s ease;
-    /* Animation när bilden laddas in */
+
     opacity: 0;
     transform: scale(0.8);
     animation: fadeInScale 0.8s ease forwards;
@@ -296,10 +295,10 @@ section {
 
     .profile-image:hover {
         transform: scale(1.05);
-        border-color: #999; /* mörkare grå vid hover */
+        border-color: #999; 
     }
 
-/* Nyckelbildruta för fade/scale-in */
+
 @keyframes fadeInScale {
     to {
         opacity: 1;
@@ -308,7 +307,6 @@ section {
 }
 
 
-/* Om mig sektion */
 .about-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -349,7 +347,7 @@ section {
         font-size: 1.2rem;
     }
 
-/* Utbildning sektion */
+
 .timeline {
     max-width: 900px;
     margin: 0 auto;
@@ -387,7 +385,6 @@ section {
     color: #454d66;
 }
 
-/* Erfarenhet sektion */
 .experience-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -426,7 +423,7 @@ section {
     color: #454d66;
 }
 
-/* Info items */
+
 .info-item {
     background-color: #ffffff;
     color: #333333;
@@ -438,7 +435,7 @@ section {
         color: #333333;
     }
 
-/* Timeline och Experience items */
+
 .timeline-item, .experience-item, .project-card {
     background-color: #ffffff;
     border-left: 1px solid #e0e0e0;
@@ -454,7 +451,7 @@ section {
     color: #efeeb4;
 }
 
-/* Knappar och länkar */
+
 .project-link, .cta-button, button {
     background-color: #ffffff;
     color: #333333;
@@ -467,7 +464,7 @@ section {
     }
 
 
-/* CV Section */
+
 .cv-section {
     background-color: #efeeb4;
     padding: 4rem 2rem;
@@ -555,7 +552,7 @@ section {
                 left: 0;
             }
 
-/* Projekt Galleri */
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -654,7 +651,7 @@ section {
         font-size: 1.1rem;
     }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .cv-grid {
         grid-template-columns: 1fr;
@@ -684,7 +681,7 @@ section {
         transform: translateY(-2px);
     }
 
-/* Responsiv design */
+
 @media (max-width: 768px) {
     .social-icon {
         font-size: 1.5rem;
@@ -701,7 +698,7 @@ section {
     height: 100%;
     overflow: hidden;
     z-index: 0;
-    opacity: 0.1; /* diskret bakgrund */
+    opacity: 0.1;
 }
 
 .carousel-track {
@@ -718,7 +715,7 @@ section {
         opacity: 0.8;
     }
 
-/* Loop animation */
+
 @keyframes scroll-left {
     0% {
         transform: translateX(0);
@@ -730,7 +727,7 @@ section {
 }
 
 
-/*about me*/
+
 .clean-about {
     background-color: #ffffff;
     padding: 5rem 2rem;
@@ -804,7 +801,7 @@ section {
         box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
     }
 
-/* About Highlights Section */
+
 .about-highlights {
     margin-top: 2rem;
     background-color: #ffffff;
@@ -852,9 +849,6 @@ section {
         transform: translateY(-2px);
     }
 
-/* =============================================================
-   PORTFOLIO SECTION
-============================================================= */
 .coding-projects {
     padding: 2rem 1rem;
     background-color: #ffffff;
@@ -994,7 +988,7 @@ section {
         transform: translateY(-2px);
     }
 
-/* Hide scrollbar for WebKit */
+
 .project-list::-webkit-scrollbar {
     height: 10px;
 }
@@ -1036,9 +1030,6 @@ section {
 
 
 
-
-
-/*REFERENCE SECITON---*/
 .about-references {
     margin-top: 3rem;
     text-align: center;
@@ -1101,8 +1092,6 @@ section {
 }
 
 
-/*contact*/
-/* Kontakt */
 .contact-section {
     padding: 4rem 1.5rem;
     background-color: #ffffff;
@@ -1158,8 +1147,6 @@ section {
             background-color: #555;
         }
 
-
-/* Footer */
 
 
 .site-footer {
@@ -1268,7 +1255,6 @@ section {
         margin-bottom: 0.3rem;
     }
 
-/* Infinite loop scroll */
 @keyframes scrollCarousel {
     0% {
         transform: translateX(0);

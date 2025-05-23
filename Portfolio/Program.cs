@@ -12,7 +12,6 @@ namespace Portfolio
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddHttpClient();
             builder.Services.Configure<OpenWeatherOptions>(
@@ -20,7 +19,7 @@ namespace Portfolio
 
             builder.Services.AddHttpClient<IWeatherService, WeatherService>();
 
-            // Lägg till databaskoppling
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -43,22 +42,7 @@ namespace Portfolio
                 }
             }
 
-            
-
-            // 🟡 Lägg till databasinitiering + seeding
-            //using (var scope = app.Services.CreateScope())
-            //{
-            //    var services = scope.ServiceProvider;
-            //    var context = services.GetRequiredService<ApplicationDbContext>();
-
-            //    // Skapa databasen om den inte finns (utan migrations)
-            //    context.Database.EnsureCreated();
-
-            //    // Kör seeding
-            //    SeedData.Initialize(context);
-            //}
-
-            // Configure the HTTP request pipeline.
+           
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");

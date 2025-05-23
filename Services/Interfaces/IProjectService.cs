@@ -15,6 +15,6 @@ namespace Services.Interfaces
         Task UpdateProjectAsync(Project project);
         Task DeleteProjectAsync(int id);
 
-        // lägg till fler metoder vid behov
+
     }
 }
