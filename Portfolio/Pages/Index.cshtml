@@ -7,12 +7,8 @@
 
 <section id="hero">
     @await Html.PartialAsync("Partials/_HeroPartial")
-
 </section>
 
-@* <section id="hero"> *@
-@*     @await Html.PartialAsync("Partials/_TechStack") *@
-@* </section> *@
 
 <section id="about-me">
     @await Html.PartialAsync("Partials/_AboutPartial")
@@ -24,9 +20,7 @@
         <h2 class="section-title">Portfolio</h2>
         <p class="section-subtitle">Here are some of my school and personal projects built with .NET and C#.</p>
 
-        <div class="project-list collapsed" id="project-list">
-
-        </div>
+        <div class="project-list collapsed" id="project-list"></div>
 
         <div style="text-align:center; margin-top: 1rem;">
             <button id="toggle-projects" class="cta-button soft">Show More</button>
@@ -39,7 +33,6 @@
     @await Html.PartialAsync("Partials/_ContactPartial", new Portfolio.Models.ContactFormViewModel())
 </section>
 
-
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
@@ -48,5 +41,7 @@
 
 @section Scripts {
     <script src="~/js/projects.js"></script>
+    <script type="module" src="~/js/contact.js"></script>
+
 }
 

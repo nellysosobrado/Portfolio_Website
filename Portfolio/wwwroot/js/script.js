@@ -8,13 +8,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Hantera kontaktformulär
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    // Här kan du lägga till kod för att hantera formuläret
-    alert('Tack för ditt meddelande! Jag återkommer så snart som möjligt.');
-    this.reset();
-});
+//// Hantera kontaktformulär
+//document.getElementById('contact-form').addEventListener('submit', function (e) {
+//    e.preventDefault();
+//    // Här kan du lägga till kod för att hantera formuläret
+//    alert('Tack för ditt meddelande! Jag återkommer så snart som möjligt.');
+//    this.reset();
+//});
 
 // Enkel animation för projekt-kort
 const projectCards = document.querySelectorAll('.project-card');
