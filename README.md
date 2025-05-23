@@ -71,13 +71,20 @@ The solution includes the following projects:
  
 ##  Form Validation
 
-The contact form on the homepage uses **Data Annotations** (e.g. `[Required]`, `[EmailAddress]`) to define validation rules directly in the model. These rules are enforced through **server-side validation** using `ModelState.IsValid` in the Razor Page’s `OnPostAsync` method.
+The contact form on the homepage uses built-in **HTML5 validation attributes** (e.g. `required`, `type="email"`) to ensure valid input before the message is sent via EmailJS.
+
+Validation is enforced directly in the browser using standard form controls. This includes:
+
+- Required fields for name, email, and message
+- Email format validation via `type="email"`
+- Prevention of submission unless all fields are valid
 
 This ensures:
 
-- Valid input before processing  
-- Data integrity and security  
-- A better user experience  
+- Immediate user feedback
+- Valid and structured data sent to EmailJS
+- A secure and user-friendly experience without server-side validation
+
 
 ## Languages & Tools
 
