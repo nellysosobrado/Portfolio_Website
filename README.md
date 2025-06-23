@@ -12,10 +12,10 @@ To ensure secure and flexible configuration, I use the appsettings.json system i
 ## Live Demo
 
 - Portfolio (Frontend):  
-  https://portfolionylegna-duhegge3eph2eve9.swedencentral-01.azurewebsites.net/
+  https://nylegnakirsosobradoportfolio-c5haf4axgtazeefk.swedencentral-01.azurewebsites.net
 
 - PortfolioAPI (Swagger UI):  
-  https://portfolioapi20250517155004-a3abhtfaecf6ekdh.swedencentral-01.azurewebsites.net/swagger/index.html
+   https://portfolioapi-fagrd3gvh0g9frbw.swedencentral-01.azurewebsites.net 
 
 
 
