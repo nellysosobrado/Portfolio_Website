@@ -43,8 +43,8 @@ namespace PortfolioAPI
                 options.AddDefaultPolicy(policy =>
                 {
                     policy.WithOrigins(
-                        "https://localhost:7087", 
-                        "https://portfolionylegna-duhegge3eph2eve9.swedencentral-01.azurewebsites.net" 
+                        "https://localhost:7087",
+                        "https://nylegnakirsosobradoportfolio-c5haf4axgtazeefk.swedencentral-01.azurewebsites.net"
                     )
                     .AllowAnyHeader()
                     .AllowAnyMethod();
