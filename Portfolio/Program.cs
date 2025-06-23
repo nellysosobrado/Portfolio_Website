@@ -25,8 +25,10 @@ namespace Portfolio
 
             builder.Services.AddHttpClient<IProjectDataService, ProjectDataService>(client =>
             {
-                client.BaseAddress = new Uri("https://portfolioapi20250517155004-a3abhtfaecf6ekdh.swedencentral-01.azurewebsites.net");
+                var apiBaseUrl = builder.Configuration["ApiBaseUrl"];
+                client.BaseAddress = new Uri(apiBaseUrl!);
             });
+
 
             var app = builder.Build();
 
