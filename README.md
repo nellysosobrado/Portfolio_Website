@@ -13,7 +13,7 @@ To ensure secure and flexible configuration, I use the appsettings.json system i
 
 - Portfolio (Frontend):  
   https://nylegnakirsosobradoportfolio-c5haf4axgtazeefk.swedencentral-01.azurewebsites.net
-
+  
 - PortfolioAPI (Swagger UI):  
    https://portfolioapi-fagrd3gvh0g9frbw.swedencentral-01.azurewebsites.net 
 
