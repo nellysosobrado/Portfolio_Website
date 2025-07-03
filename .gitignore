@@ -69,7 +69,7 @@ project.fragment.lock.json
 artifacts/
 
 # Local settings
-appsettings.json
+# appsettings.json
 
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
