@@ -33,8 +33,8 @@ namespace PortfolioAPI
 
             builder.Services.AddScoped<IProjectService, ProjectService>();
             builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
-            builder.Services.AddScoped<IProjectService, ProjectService>();
-            builder.Services.AddAutoMapper(typeof(Program));
+            //builder.Services.AddScoped<IProjectService, ProjectService>();
+            //builder.Services.AddAutoMapper(typeof(Program));
 
 
 
@@ -44,7 +44,7 @@ namespace PortfolioAPI
                 {
                     policy.WithOrigins(
                         "https://localhost:7087",
-                        "https://nylegnakirsosobradoportfolio-c5haf4axgtazeefk.swedencentral-01.azurewebsites.net"
+                        "https://portfolio-nylegnakirsosobrado-hmftdcayh4fjctdm.swedencentral-01.azurewebsites.net"
                     )
                     .AllowAnyHeader()
                     .AllowAnyMethod();

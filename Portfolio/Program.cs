@@ -38,8 +38,8 @@ namespace Portfolio
                      GetRequiredService<ApplicationDbContext>();
                 if (dbContext.Database.IsRelational())
                 {
-                    dbContext.Database.Migrate();
-                    dbContext.Database.EnsureCreated();
+                    //dbContext.Database.Migrate();
+                    //dbContext.Database.EnsureCreated();
                     SeedData.Initialize(dbContext);
                 }
             }

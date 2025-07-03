@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "mssql6": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('serviceConnectorResourceGroupName')]/providers/Microsoft.Web/sites/Portfolio-NylegnaKirSosobrado/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsDefaultConnection6_6904E8A57B",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/portfolio-dbserver/databases/PortfolioDb",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DefaultConnection6",
+      "dynamicId": null
+    }
+  }
+}
