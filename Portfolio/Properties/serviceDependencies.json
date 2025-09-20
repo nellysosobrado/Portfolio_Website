@@ -29,6 +29,11 @@
       "type": "mssql",
       "connectionId": "ConnectionStrings:DefaultConnection6",
       "dynamicId": null
+    },
+    "mssql7": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DefaultConnection7",
+      "dynamicId": null
     }
   }
 }
