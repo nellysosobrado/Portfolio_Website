@@ -50,6 +50,7 @@ namespace Portfolio
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+            app.UseStaticFiles(); // behövs för wwwroot
 
             app.UseHttpsRedirection();
             app.UseRouting();

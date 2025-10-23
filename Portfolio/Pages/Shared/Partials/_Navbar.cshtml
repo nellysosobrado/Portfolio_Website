@@ -1,0 +1,41 @@
+﻿@* Uppdaterade länkar med asp-fragment så att de alltid pekar till Index *@
+<nav class="navbar navbar-expand-sm navbar-light">
+    <div class="container">
+        <a class="navbar-brand" asp-page="/Index" asp-fragment="about"><i class='uil uil-user'></i> Nylegna Kir</a>
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" asp-page="/Index" asp-fragment="about"><span data-hover="About">About</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-page="/Index" asp-fragment="project"><span data-hover="Projects">Projects</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-page="/Index" asp-fragment="resume"><span data-hover="Resume">Resume</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-page="/Index" asp-fragment="contact"><span data-hover="Contact">Contact</span></a>
+                </li>
+            </ul>
+
+
+            <ul class="navbar-nav ml-lg-auto">
+                <div class="ml-lg-4">
+                    <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                        <i class="color-mode-icon"></i>
+                        Color mode
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
