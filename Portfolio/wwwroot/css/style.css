@@ -1,10 +1,4 @@
-/*
 
-Tooplate 2115 Marvel
-
-https://www.tooplate.com/view/2115-marvel
-
-*/
 
 
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
@@ -575,3 +569,15 @@ b, strong {
     text-align: left; /* eller center/right */
 }
 
+.footer-link {
+    color: inherit;
+}
+
+    .footer-link:hover {
+        color: #ffc200;
+    }
+
+.icon-lg {
+    font-size: 1.5rem;
+    line-height: 1;
+}
