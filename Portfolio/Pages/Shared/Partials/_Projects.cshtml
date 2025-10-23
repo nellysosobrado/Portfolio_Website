@@ -1,40 +1,37 @@
-﻿<section class="project py-5" id="project">
+﻿@using Portfolio.Models
+@model IEnumerable<ProjectDto>
+
+<section class="project py-5" id="project">
     <div class="container">
         <div class="row">
             <div class="col-lg-11 text-center mx-auto col-12">
                 <div class="col-lg-8 mx-auto">
-                    <h2>Things I have designed for digital media agencies</h2>
+                    <h2>Mina projekt</h2>
                 </div>
-
 
                 <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="project-info">
-                            <img src="~/images/project/project-image01.png" class="img-fluid" alt="project image" />
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="project-info">
-                            <img src="~/images/project/project-image02.png" class="img-fluid" alt="project image" />
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="project-info">
-                            <img src="~/images/project/project-image03.png" class="img-fluid" alt="project image" />
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="project-info">
-                            <img src="~/images/project/project-image04.png" class="img-fluid" alt="project image" />
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="project-info">
-                            <img src="~/images/project/project-image05.png" class="img-fluid" alt="project image" />
-                        </div>
-                    </div>
-                </div>
+                    @foreach (var p in Model)
+                    {
+                        <div class="item">
+                            <div class="project-info position-relative">
+                                <img src="@p.ImageUrl" class="img-fluid" alt="@p.Title" />
+                                <div class="project-overlay d-flex flex-column justify-content-center align-items-center">
+                                    <h5 class="mb-2">@p.Title</h5>
+                                    <p class="small mb-2 px-3">@p.Description</p>
 
+                                    @if (!string.IsNullOrEmpty(p.GithubUrl))
+                                    {
+                                        <a class="btn btn-sm custom-btn mr-2" href="@p.GithubUrl" target="_blank" rel="noopener">GitHub</a>
+                                    }
+                                    @if (!string.IsNullOrEmpty(p.DemoUrl))
+                                    {
+                                        <a class="btn btn-sm custom-btn custom-btn-bg" href="@p.DemoUrl" target="_blank" rel="noopener">Demo</a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
 
             </div>
         </div>
